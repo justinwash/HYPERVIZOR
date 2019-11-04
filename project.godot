@@ -15,7 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="fight"
+config/name="Fighter Platformer"
+config/description="it's in the name"
 run/main_scene="res://Dev/Dev.tscn"
 config/icon="res://icon.png"
 
