@@ -50,16 +50,6 @@ func update(delta):
 				momentum = 1
 			move_dir -= 1
 
-		var opponent_distance = character.position.x - character.opponent.position.x
-
-		if opponent_distance > 0 && move_dir > 0:
-			if opponent_distance + move_dir > 900:
-				move_dir = 0
-
-		if opponent_distance < 0 && move_dir < 0:
-			if abs(opponent_distance + move_dir) > 900:
-				move_dir = 0
-
 	character.move_and_slide(Vector2(move_dir * MOVE_SPEED * momentum, 1000), Vector2(0, -1))
 
 	if character.btn_input != 0:

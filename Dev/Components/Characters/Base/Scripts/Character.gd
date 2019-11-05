@@ -42,7 +42,6 @@ var attack_state = null
 func _physics_process(delta):
 	frame += 1
 	time_on_floor = time_on_floor + 1 if is_on_floor() else 0
-	healthbar.value = health
 	update_dpad()
 	update_btn()
 	update_input_buffer(update_dpad(), update_btn(), frame)
