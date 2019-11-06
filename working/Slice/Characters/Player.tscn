@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Slice/Characters/kof-placeholder.png" type="Texture" id=1]
+[ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=2]
+[ext_resource path="res://Slice/Characters/States/Idle.gd" type="Script" id=3]
+[ext_resource path="res://Slice/Characters/States/Walk.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 68, 108 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 68, 0, 68, 108 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 22.7966
+height = 57.9676
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Shadow" type="Polygon2D" parent="."]
+position = Vector2( -34.4685, -257.423 )
+rotation = 0.247558
+color = Color( 0, 0, 0, 0.235294 )
+polygon = PoolVector2Array( 110.426, 282.438, 134.837, 278.832, 151.758, 278.832, 168.956, 278.555, 183.657, 279.387, 190.315, 283.271, 189.482, 287.709, 182.27, 290.205, 145.932, 296.03, 98.2213, 301.023, 87.9579, 296.863, 91.2866, 287.986, 104.047, 286.044 )
+
+[node name="Placeholder Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -3.03268, 0.868729 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2( -0.475655, 2.85392 )
+shape = SubResource( 4 )
+
+[node name="States" type="Node2D" parent="."]
+
+[node name="Idle" type="Node2D" parent="States"]
+script = ExtResource( 3 )
+
+[node name="Walk" type="Node2D" parent="States"]
+script = ExtResource( 4 )
