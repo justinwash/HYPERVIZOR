@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
+var sprite
+var stats
 var states
 var last_state
 var current_state
-var stats
 
 func _ready():
+	sprite = $Sprite
 	stats = $Stats
 
 	states = {

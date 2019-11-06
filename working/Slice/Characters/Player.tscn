@@ -33,10 +33,9 @@ script = ExtResource( 2 )
 [node name="Stats" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
-[node name="Placeholder Sprite" type="AnimatedSprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -3.03268, 0.868729 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]
