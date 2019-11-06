@@ -10,7 +10,8 @@ func _ready():
 
 	states = {
 		"idle": $States/Idle,
-		"walk": $States/Walk
+		"walk": $States/Walk,
+		"jump": $States/Jump
 	}
 
 	current_state = states["idle"]
@@ -22,5 +23,7 @@ func _physics_process(delta):
 	if current_state != last_state:
 		print("current state: " + current_state.name)
 		last_state = current_state
+		if current_state.has_method("ready_state"):
+			current_state.ready_state(self)
 
 	current_state.update_state(self)
