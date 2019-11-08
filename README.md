@@ -30,7 +30,7 @@ HYPERVIZOR is a platformer/metroidvania-style game that sets itself apart from t
 - Earn XP by defeating enemies and use it to purchase new moves from any obtained VIZOR's move list.
 - Learn the patterns of each enemy to gain an advantage in combat. Duck HIGHs, parry MIDs, counter LOWs with aerial abilities.
 - Perform combos utilizing unlocked moves in a LAUNCH > JUGGLE > ENDER format.
-- Use accrued HYPER to perform enhanced versions of unlocked moves _or_ to instantly break away from a combat scenario.
+- Use accrued HYPER to perform enhanced versions of unlocked moves or to instantly break away from a combat scenario.
 
 ## MVP/Vertical Slice Requirements
 
