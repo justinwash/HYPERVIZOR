@@ -6,9 +6,9 @@ HYPERVIZOR is a platformer/metroidvania-style game that sets itself apart from t
 
 ### Structure
 
-- 3 PHASEs (large levels)
+- 3 PHASEs (large levels), 1 FINAL PHASE.
 - Boss of each phase fights with a specific style and drops a VIZOR, which grants access to that fighting style as a selectable "class".
-- Complete the phases in any order, with any unlocked fighting style.
+- Complete the 3 initial phases in any order, with any unlocked fighting style.
 
 ### Exploration Mode
 
@@ -17,7 +17,7 @@ HYPERVIZOR is a platformer/metroidvania-style game that sets itself apart from t
 - Collect CREDITS to spend upgrading and unlocking exploration abilities such as Double-Jump or Slide.
 - Locate the Boss Door and complete an in-PHASE puzzle (find an item, flip a number of switches, PERFECT a number of enemies, etc) to unlock it.
 - Defeat the Boss to obtain its VIZOR.
-- Select which of the remaining PHASEs to tackle next, and with which VIZOR equipped.
+- Select which of the remaining initial PHASEs to tackle next, and with which VIZOR equipped.
 - Encountering a non-Boss enemy in Exploration Mode triggers Combat Mode
 
 ### Combat Mode
@@ -47,7 +47,7 @@ A 1 to 2 room demo of the main game loop consisting of:
 
 <sub>this is just an idea so grain of salt etc</sub>
 
-In playing through each of the 3 PHASEs the player may encounter:
+In playing through each of the 3 initial PHASEs the player may encounter:
 
 - An Engineering Facility where the player learns of the futuristic armor technology that made balistic weapons a relic of the past.
 - A Military Compound where the player learns of the development of the VIZORs that were developed to enhance soldiers' hand-to-hand combat skills against a newly ballistic-immune enemy of the state.
