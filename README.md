@@ -38,7 +38,7 @@ A 1 to 2 room demo of the main game loop consisting of:
 
 - Enough CREDITS to unlock a double-jump Exploration Mode ability.
 - 2 enemies:
-  - 1 is difficult to defeat without obtaining enough XP to unlock a move on the pre-equipped VIZOR's move list. Encourage the use of Exploration Mode's stealth mechanics to avoid it and obtain CREDITs. Explain the use of SUPER to escape combat in the event that the player attempts to fight it anyway.
+  - 1 is difficult to defeat without obtaining enough XP to unlock a move on the pre-equipped VIZOR's move list. Encourage the use of Exploration Mode's stealth mechanics to avoid it and obtain CREDITs. Explain the use of HYPER to escape combat in the event that the player attempts to fight it anyway.
   - The other is easier, but out of reach until obtaining enough CREDITs to unlock the double-jump Exploration Mode ability. When this enemy is defeated, it provides enough XP to unlock the new VIZOR move.
 - With the new VIZOR move equipped, the player should stand a better chance against the more difficult enemy.
 - When defeated, the VIZOR selection screen appears as a teaser of the game's possibilities. Display a 'THANK YOU FOR PLAYING' message and a 'PLAY AGAIN' button.
