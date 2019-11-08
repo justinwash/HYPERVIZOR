@@ -7,7 +7,7 @@ var last_state
 var current_state
 
 func _ready():
-	sprite = $Sprite
+	sprite = $PolySprite
 	stats = $Stats
 
 	states = {

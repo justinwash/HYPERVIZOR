@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="fighter-platformer"
+config/name="HYPERVIZOR"
 run/main_scene="res://Slice/Scenes/LevelSlice.tscn"
 config/icon="res://icon.png"
 
