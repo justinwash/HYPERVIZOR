@@ -44,7 +44,9 @@ A 1 to 2 room demo of the main game loop consisting of:
 - 1 Boss behind a locked door. Opens when the other 2 enemies have been defeated. This can be a simple re-scale and stat-tweak of the other 2 enemies.
 - When defeated, the VIZOR selection screen appears as a teaser of the game's possibilities. Display a 'THANK YOU FOR PLAYING' message and a 'PLAY AGAIN' button.
 
-# Why Doesn't A Game Called HYPERVIZOR Have Lazer Guns?
+## Q&A
+
+### Why Doesn't A Game Called HYPERVIZOR Have Lazer Guns?
 
 <sub>this is just an idea so grain of salt etc</sub>
 
@@ -53,3 +55,7 @@ In playing through each of the 3 initial PHASEs the player may encounter:
 - An Engineering Facility where the player learns of the futuristic armor technology that made balistic weapons a relic of the past.
 - A Military Compound where the player learns of the development of the VIZORs that were developed to enhance soldiers' hand-to-hand combat skills against a newly ballistic-immune enemy of the state.
 - A Cityscape where the player learns of the economic and political effects caused by an endless war propelled by the unceasing production of these military and technological advancements.
+
+### How Are You Going To Make A Single Player Fighting Game Fun?
+
+<sub>working on it...</sub>
