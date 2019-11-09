@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Slice/Characters/States/Idle.gd" type="Script" id=5]
 [ext_resource path="res://Slice/Characters/States/Walk.gd" type="Script" id=6]
 [ext_resource path="res://Slice/Characters/States/Jump.gd" type="Script" id=7]
+[ext_resource path="res://Slice/Characters/States/Crouch.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.7966
@@ -38,6 +39,9 @@ script = ExtResource( 6 )
 
 [node name="Jump" type="Node2D" parent="States"]
 script = ExtResource( 7 )
+
+[node name="Crouch" type="Node2D" parent="States"]
+script = ExtResource( 8 )
 
 [node name="PolySprite" type="Node2D" parent="."]
 editor/display_folded = true

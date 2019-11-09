@@ -1,6 +1,9 @@
 extends Node2D
 
 func update_state(player):
+	if (Input.is_action_pressed("player_down")):
+		player.current_state = player.states["crouch"]
+		
 	if (Input.is_action_pressed("player_up")):
 		player.current_state = player.states["jump"]
 

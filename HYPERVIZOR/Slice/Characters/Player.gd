@@ -18,7 +18,8 @@ func _ready():
 	states = {
 		"idle": $States/Idle,
 		"walk": $States/Walk,
-		"jump": $States/Jump
+		"jump": $States/Jump,
+		"crouch": $States/Crouch
 	}
 
 	current_state = states["idle"]
