@@ -1,14 +1,19 @@
 extends KinematicBody2D
 
 var sprite
-var stats
+var physics
+var vitals
+var inventory
+
 var states
 var last_state
 var current_state
 
 func _ready():
 	sprite = $PolySprite
-	stats = $Stats
+	physics = $Physics
+	vitals = $Vitals
+	inventory = $Inventory
 
 	states = {
 		"idle": $States/Idle,

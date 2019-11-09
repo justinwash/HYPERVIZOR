@@ -9,5 +9,5 @@ func update_state(player):
 		player.current_state = player.states["walk"]
 
 	else:
-		player.move_and_slide(Vector2(0, player.stats.GRAVITY), Vector2(0,-1))
+		player.move_and_slide(Vector2(0, player.physics.GRAVITY), Vector2(0,-1))
 
