@@ -16,14 +16,22 @@ func _ready():
 	inventory = $Inventory
 
 	states = {
-		"idle": $States/Idle,
-		"walk": $States/Walk,
-		"jump": $States/Jump,
-		"crouch": $States/Crouch
+		combat = {
+			"idle": $States/Combat/Idle,
+			"walk": $States/Combat/Walk,
+			"jump": $States/Combat/Jump,
+			"crouch": $States/Combat/Crouch
+		},
+		exploration = {
+			"idle": $States/Exploration/Idle,
+			"walk": $States/Exploration/Walk,
+			"jump": $States/Exploration/Jump,
+			"crouch": $States/Exploration/Crouch
+		}
 	}
 
-	current_state = states["idle"]
-	last_state = states["idle"]
+	current_state = states.exploration["idle"]
+	last_state = states.exploration["idle"]
 
 	print("current state: " + current_state.name)
 

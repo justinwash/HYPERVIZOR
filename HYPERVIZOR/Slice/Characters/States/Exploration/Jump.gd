@@ -20,5 +20,5 @@ func update_state(player):
 	jump_velocity_delta -= player.physics.GRAVITY * 0.1
 
 	if player.is_on_floor():
-		player.current_state = player.states["idle"]
+		player.current_state = player.states.exploration["idle"]
 

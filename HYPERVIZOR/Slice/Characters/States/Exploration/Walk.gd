@@ -13,8 +13,8 @@ func update_state(player):
 	player.move_and_slide(Vector2(player.physics.MOVE_SPEED * move_dir, player.physics.GRAVITY), Vector2(0,-1))
 
 	if Input.is_action_pressed("player_up"):
-		player.current_state = player.states["jump"]
+		player.current_state = player.states.exploration["jump"]
 
 	if (!Input.is_action_pressed("player_right")
 	and !Input.is_action_pressed("player_left")):
-		player.current_state = player.states["idle"]
+		player.current_state = player.states.exploration["idle"]
