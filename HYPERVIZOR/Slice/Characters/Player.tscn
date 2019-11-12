@@ -11,7 +11,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.7966
-height = 57.9676
+height = 49.6111
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )

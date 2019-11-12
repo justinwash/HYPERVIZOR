@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="PauseMenu" type="CanvasLayer"]
+
+[node name="MenuTitle" type="Label" parent="."]
+visible = false
+margin_left = 45.3103
+margin_top = 30.9827
+margin_right = 96.3103
+margin_bottom = 44.9827
+text = "PAUSED"
