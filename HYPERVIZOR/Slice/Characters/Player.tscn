@@ -1,17 +1,26 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
 [ext_resource path="res://Slice/Characters/Properties/Vitals.gd" type="Script" id=3]
 [ext_resource path="res://Slice/Characters/Properties/Physics.gd" type="Script" id=4]
-[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=5]
-[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=6]
-[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=7]
-[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=8]
+[ext_resource path="res://Slice/Characters/ContextualComponents/ExplorationComponents.gd" type="Script" id=5]
+[ext_resource path="res://Slice/Characters/ContextualComponents/CombatComponents.gd" type="Script" id=6]
+[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=7]
+[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=8]
+[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=9]
+[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=10]
+[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=11]
+[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=12]
+[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=13]
+[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 22.7966
-height = 49.6111
+radius = 15.9434
+height = 58.7845
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 76.1124
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -29,35 +38,47 @@ script = ExtResource( 4 )
 position = Vector2( -0.475655, 2.85392 )
 shape = SubResource( 1 )
 
+[node name="ExplorationComponents" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="InteractionRadius" type="Area2D" parent="ExplorationComponents"]
+
+[node name="InteractionShape" type="CollisionShape2D" parent="ExplorationComponents/InteractionRadius"]
+shape = SubResource( 2 )
+
+[node name="CombatComponents" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 6 )
+
 [node name="States" type="Node2D" parent="."]
 
 [node name="Combat" type="Node2D" parent="States"]
 
 [node name="Idle" type="Node2D" parent="States/Combat"]
-script = ExtResource( 5 )
-
-[node name="Walk" type="Node2D" parent="States/Combat"]
-script = ExtResource( 6 )
-
-[node name="Jump" type="Node2D" parent="States/Combat"]
 script = ExtResource( 7 )
 
-[node name="Crouch" type="Node2D" parent="States/Combat"]
+[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 8 )
+
+[node name="Jump" type="Node2D" parent="States/Combat"]
+script = ExtResource( 9 )
+
+[node name="Crouch" type="Node2D" parent="States/Combat"]
+script = ExtResource( 10 )
 
 [node name="Exploration" type="Node2D" parent="States"]
 
 [node name="Idle" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 5 )
+script = ExtResource( 11 )
 
 [node name="Walk" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 6 )
+script = ExtResource( 12 )
 
 [node name="Jump" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 7 )
+script = ExtResource( 13 )
 
 [node name="Crouch" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 8 )
+script = ExtResource( 14 )
 
 [node name="PolySprite" type="Node2D" parent="."]
 editor/display_folded = true
@@ -110,3 +131,5 @@ polygon = PoolVector2Array( -6.06327, -39.9156, -9.44885, -38.0689, -13.8347, -3
 [node name="Polygon2D7" type="Polygon2D" parent="PolySprite"]
 color = Color( 0.552941, 0.552941, 0.552941, 1 )
 polygon = PoolVector2Array( -18.7863, 5.17336, -18.4468, 6.6282, -15.6342, 7.59809, -14.1793, 7.40411, -11.7061, 5.65831, -12.1426, 4.25197, -14.4218, 5.07638, -15.7796, 5.36734 )
+[connection signal="area_entered" from="ExplorationComponents/InteractionRadius" to="." method="_on_InteractionRadius_area_entered"]
+[connection signal="area_exited" from="ExplorationComponents/InteractionRadius" to="." method="_on_InteractionRadius_area_exited"]

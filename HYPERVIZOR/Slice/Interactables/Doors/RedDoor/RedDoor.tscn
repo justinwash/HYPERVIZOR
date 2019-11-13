@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Slice/Interactables/Doors/RedDoor/RedDoor.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Interactables/Doors/RedDoor/RedDoor.png" type="Texture" id=2]
@@ -70,6 +70,9 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
+[sub_resource type="CircleShape2D" id=6]
+radius = 88.2043
+
 [node name="RedDoor" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -94,3 +97,8 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Close = SubResource( 4 )
 anims/Open = SubResource( 5 )
+
+[node name="InteractionRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRadius"]
+shape = SubResource( 6 )

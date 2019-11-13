@@ -90,10 +90,10 @@ position = Vector2( 784, 224 )
 [node name="Door3" parent="Interactables" instance=ExtResource( 5 )]
 position = Vector2( 1648, 224 )
 
-[node name="Character" parent="." instance=ExtResource( 6 )]
-position = Vector2( -228.918, 229.792 )
+[node name="PC" parent="." instance=ExtResource( 6 )]
+position = Vector2( -110, 237 )
 
-[node name="Camera2D" type="Camera2D" parent="Character"]
+[node name="Camera2D" type="Camera2D" parent="PC"]
 current = true
 limit_left = -361
 limit_top = -24
@@ -103,11 +103,11 @@ drag_margin_top = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="PauseMenu" parent="Character/Camera2D" instance=ExtResource( 7 )]
+[node name="PauseMenu" parent="PC/Camera2D" instance=ExtResource( 7 )]
 pause_mode = 2
 script = ExtResource( 8 )
 
-[node name="MenuTitle" type="Label" parent="Character/Camera2D/PauseMenu"]
+[node name="MenuTitle" type="Label" parent="PC/Camera2D/PauseMenu"]
 visible = false
 margin_left = 45.3103
 margin_top = 30.9827

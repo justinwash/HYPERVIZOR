@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+# State Variables
 var sprite
 var physics
 var vitals
@@ -43,3 +44,21 @@ func _physics_process(delta):
 			current_state.ready_state(self)
 
 	current_state.update_state(self)
+
+# Utility Variables
+var nearest_interactable
+
+# Utility Methods
+func can_interact():
+	return nearest_interactable != null
+
+func _on_InteractionRadius_area_entered(area):
+	nearest_interactable = area.owner
+	print(area)
+	print('entered')
+
+
+func _on_InteractionRadius_area_exited(area):
+	nearest_interactable = null
+	print(area)
+	print('exited')

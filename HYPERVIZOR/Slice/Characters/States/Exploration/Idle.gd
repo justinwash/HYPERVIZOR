@@ -1,3 +1,4 @@
+# Exploration/Idle
 extends Node2D
 
 func update_state(player):
@@ -13,4 +14,9 @@ func update_state(player):
 
 	else:
 		player.move_and_slide(Vector2(0, player.physics.GRAVITY), Vector2(0,-1))
+		
+		if Input.is_action_just_pressed("interact"):
+			if player.can_interact():
+				player.nearest_interactable.activate()
+			
 
