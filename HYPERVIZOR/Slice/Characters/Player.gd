@@ -46,19 +46,18 @@ func _physics_process(delta):
 	current_state.update_state(self)
 
 # Utility Variables
-var nearest_interactable
+var nearby_interactables = []
 
 # Utility Methods
 func can_interact():
-	return nearest_interactable != null
+	return nearby_interactables.size() != 0
 
 func _on_InteractionRadius_area_entered(area):
-	nearest_interactable = area.owner
-	print(area)
-	print('entered')
-
+	nearby_interactables.push_front(area.owner)
+	print(area.owner.name + " nearby")
 
 func _on_InteractionRadius_area_exited(area):
-	nearest_interactable = null
-	print(area)
-	print('exited')
+	if area.owner.has_method("on_exit"):
+		area.owner.on_exit()
+	nearby_interactables.remove(nearby_interactables.find(area.owner))
+	print(area.owner.name + " not near anymore")

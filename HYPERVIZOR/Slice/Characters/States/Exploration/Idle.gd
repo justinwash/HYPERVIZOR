@@ -17,6 +17,6 @@ func update_state(player):
 		
 		if Input.is_action_just_pressed("interact"):
 			if player.can_interact():
-				player.nearest_interactable.activate()
+				player.nearby_interactables[0].activate()
 			
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door3.png-9b0ed234a7788aa8738e5abb423c9a30.stex"
+path="res://.import/door1.png-0a5a0c58ea8bdd03e234d0b83bd3f219.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Slice/Interactables/Doors/door3.png"
-dest_files=[ "res://.import/door3.png-9b0ed234a7788aa8738e5abb423c9a30.stex" ]
+source_file="res://Slice/Interactables/Doors/RedDoor/door1.png"
+dest_files=[ "res://.import/door1.png-0a5a0c58ea8bdd03e234d0b83bd3f219.stex" ]
 
 [params]
 
