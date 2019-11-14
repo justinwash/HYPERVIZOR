@@ -53,6 +53,8 @@ func can_interact():
 	return nearby_interactables.size() != 0
 
 func _on_InteractionRadius_area_entered(area):
+	if area.owner.has_method("on_enter"):
+		area.owner.on_enter()
 	nearby_interactables.push_front(area.owner)
 	print(area.owner.name + " nearby")
 
