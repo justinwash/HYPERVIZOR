@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var halted = false
+var xp_reward = 25
 
 # State Variables
 var sprite
