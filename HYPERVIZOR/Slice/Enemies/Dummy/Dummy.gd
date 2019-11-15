@@ -42,11 +42,11 @@ func _physics_process(delta):
 
 	current_state.update_state(self)
 	
-func on_enter():
+func on_enter(player):
 	pass
 	
 func activate():
 	pass
 		
-func on_exit():
+func on_exit(player):
 	pass

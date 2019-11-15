@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Slice/Tiles/Floors/sidewalk.png" type="Texture" id=1]
 [ext_resource path="res://Slice/Tiles/Backrgound/sidewalk-short-wall.png" type="Texture" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://Slice/Tiles/Backrgound/sidewalk-tall-wall.png" type="Texture" id=4]
 [ext_resource path="res://Slice/Interactables/Doors/RedDoor/RedDoor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Slice/Interactables/Terminals/ComputerTerminal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Slice/Characters/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Slice/Menus/PauseMenu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Slice/Menus/PauseMenu.gd" type="Script" id=9]
-[ext_resource path="res://Slice/Enemies/Dummy/Dummy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Slice/Interactables/Collectables/Credits/CreditPickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Slice/Characters/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Slice/Menus/PauseMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Slice/Menus/PauseMenu.gd" type="Script" id=10]
+[ext_resource path="res://Slice/Enemies/Dummy/Dummy.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -103,7 +104,19 @@ position = Vector2( 1648, 224 )
 ] instance=ExtResource( 6 )]
 position = Vector2( 125, 256 )
 
-[node name="PC" parent="." instance=ExtResource( 7 )]
+[node name="CreditPickup" parent="Interactables" instance=ExtResource( 7 )]
+position = Vector2( 520, 148 )
+
+[node name="CreditPickup2" parent="Interactables" instance=ExtResource( 7 )]
+position = Vector2( 633, 258 )
+
+[node name="CreditPickup3" parent="Interactables" instance=ExtResource( 7 )]
+position = Vector2( 932, 256 )
+
+[node name="CreditPickup4" parent="Interactables" instance=ExtResource( 7 )]
+position = Vector2( 1259, 258 )
+
+[node name="PC" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1118, 238 )
 
 [node name="Label" type="Label" parent="PC"]
@@ -122,9 +135,9 @@ drag_margin_top = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="PauseMenu" parent="PC/Camera" instance=ExtResource( 8 )]
+[node name="PauseMenu" parent="PC/Camera" instance=ExtResource( 9 )]
 pause_mode = 2
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="MenuTitle" type="Label" parent="PC/Camera/PauseMenu"]
 visible = false
@@ -138,5 +151,10 @@ text = "PAUSED"
 
 [node name="Dummy" parent="Enemies" groups=[
 "Enemies",
-] instance=ExtResource( 10 )]
+] instance=ExtResource( 11 )]
 position = Vector2( 1431, 249 )
+
+[node name="Dummy2" parent="Enemies" groups=[
+"Enemies",
+] instance=ExtResource( 11 )]
+position = Vector2( 235, 138 )

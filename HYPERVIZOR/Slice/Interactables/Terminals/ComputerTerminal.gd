@@ -15,7 +15,7 @@ func activate():
 		$TextLog.visible = true
 		is_open = true
 		
-func on_exit():
+func on_exit(player):
 	if halted:
 		return
 	$TextLog.visible = false

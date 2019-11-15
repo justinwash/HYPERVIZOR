@@ -92,12 +92,12 @@ func _on_InteractionRadius_area_entered(area):
 		return
 	
 	if area.owner.has_method("on_enter"):
-		area.owner.on_enter()
+		area.owner.on_enter(self)
 	nearby_interactables.push_front(area.owner)
 	print(area.owner.name + " nearby")
 
 func _on_InteractionRadius_area_exited(area):
 	if area.owner != null and area.owner.has_method("on_exit"):
-		area.owner.on_exit()
+		area.owner.on_exit(self)
 		nearby_interactables.remove(nearby_interactables.find(null))
 		print(area.owner.name + " not near anymore")
