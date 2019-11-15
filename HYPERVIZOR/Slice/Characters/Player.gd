@@ -37,7 +37,7 @@ func _ready():
 	print("current state: " + current_state.name)
 
 func _physics_process(delta):
-	# delete this
+	# delete below
 	$Label.text = current_mode
 	# delete above
 	
@@ -63,6 +63,7 @@ func enter_combat_mode(target):
 		
 	current_target = target
 	current_target.halted = false
+	current_target.current_state = current_target.states.combat["idle"]
 	
 	current_mode = "combat"
 
