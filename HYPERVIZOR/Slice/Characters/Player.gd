@@ -37,6 +37,10 @@ func _ready():
 	print("current state: " + current_state.name)
 
 func _physics_process(delta):
+	# delete this
+	$Label.text = current_mode
+	# delete above
+	
 	if current_state != last_state:
 		print("current state: " + current_state.name)
 		last_state = current_state
@@ -44,6 +48,23 @@ func _physics_process(delta):
 			current_state.ready_state(self)
 
 	current_state.update_state(self)
+	
+# Mode Variables
+var current_target
+var current_mode = "exploration"
+
+# Mode Methods
+func enter_combat_mode(target):
+	for interactable in get_tree().get_nodes_in_group("Interactables"):
+		interactable.halted = true
+		
+	for enemy in get_tree().get_nodes_in_group("Enemies"):
+		enemy.halted = true
+		
+	current_target = target
+	current_target.halted = false
+	
+	current_mode = "combat"
 
 # Utility Variables
 var nearby_interactables = []
@@ -52,7 +73,12 @@ var nearby_interactables = []
 func can_interact():
 	return nearby_interactables.size() != 0
 
+# Signals
 func _on_InteractionRadius_area_entered(area):
+	if area.owner.is_in_group("Enemies"):
+		enter_combat_mode(area.owner)
+		return
+	
 	if area.owner.has_method("on_enter"):
 		area.owner.on_enter()
 	nearby_interactables.push_front(area.owner)
