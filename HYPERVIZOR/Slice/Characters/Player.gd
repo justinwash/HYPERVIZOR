@@ -65,7 +65,18 @@ func enter_combat_mode(target):
 	current_target.halted = false
 	current_target.current_state = current_target.states.combat["idle"]
 	
+	current_state = states.combat["idle"]
 	current_mode = "combat"
+	
+func exit_combat_mode():
+	for interactable in get_tree().get_nodes_in_group("Interactables"):
+		interactable.halted = false
+		
+	for enemy in get_tree().get_nodes_in_group("Enemies"):
+		enemy.halted = false
+	
+	current_state = states.exploration["idle"]
+	current_mode = "exploration"
 
 # Utility Variables
 var nearby_interactables = []
@@ -86,7 +97,7 @@ func _on_InteractionRadius_area_entered(area):
 	print(area.owner.name + " nearby")
 
 func _on_InteractionRadius_area_exited(area):
-	if area.owner.has_method("on_exit"):
+	if area.owner != null and area.owner.has_method("on_exit"):
 		area.owner.on_exit()
-	nearby_interactables.remove(nearby_interactables.find(area.owner))
-	print(area.owner.name + " not near anymore")
+		nearby_interactables.remove(nearby_interactables.find(null))
+		print(area.owner.name + " not near anymore")

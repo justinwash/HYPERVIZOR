@@ -6,10 +6,10 @@
 [ext_resource path="res://Slice/Enemies/Dummy/States/Combat/Idle.gd" type="Script" id=4]
 [ext_resource path="res://Slice/Enemies/Dummy/States/Exploration/Idle.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 29 )
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 54.1479
 
 [node name="Dummy" type="KinematicBody2D"]
@@ -23,7 +23,7 @@ margin_bottom = 31.0
 color = Color( 0.427451, 0.0235294, 0.0235294, 1 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Vitals" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -34,7 +34,7 @@ script = ExtResource( 3 )
 [node name="InteractableRadius" type="Area2D" parent="."]
 
 [node name="InteractableShape" type="CollisionShape2D" parent="InteractableRadius"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="States" type="Node2D" parent="."]
 
