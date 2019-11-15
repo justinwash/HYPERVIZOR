@@ -3,7 +3,7 @@ extends Node2D
 
 func update_state(player):
 	if (Input.is_action_pressed("kill")):
-		print("kill pressed")
+		print("killing current target")
 		if player.current_target != null and player.current_mode == "combat":
 			player.current_target.free()
 			player.current_target = null
@@ -20,5 +20,5 @@ func update_state(player):
 		player.current_state = player.states.combat["walk"]
 
 	else:
-		player.move_and_slide(Vector2(0, player.physics.GRAVITY), Vector2(0,-1))
+		player.move_and_slide(Vector2(0, player.physics.COMBAT_GRAVITY), Vector2(0,-1))
 

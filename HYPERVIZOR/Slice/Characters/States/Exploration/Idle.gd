@@ -13,7 +13,7 @@ func update_state(player):
 		player.current_state = player.states.exploration["walk"]
 
 	else:
-		player.move_and_slide(Vector2(0, player.physics.GRAVITY), Vector2(0,-1))
+		player.move_and_slide(Vector2(0, player.physics.EXPLORATION_GRAVITY), Vector2(0,-1))
 		
 		if Input.is_action_just_pressed("interact"):
 			if player.can_interact():
