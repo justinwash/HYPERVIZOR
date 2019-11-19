@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=12]
 [ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=13]
 [ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=14]
+[ext_resource path="res://Slice/Characters/Handlers/Input.gd" type="Script" id=15]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.9434
@@ -33,6 +34,9 @@ script = ExtResource( 3 )
 
 [node name="Physics" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="Input" type="Node2D" parent="."]
+script = ExtResource( 15 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( -0.475655, 2.85392 )

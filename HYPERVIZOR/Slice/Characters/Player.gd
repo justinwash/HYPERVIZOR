@@ -6,6 +6,7 @@ var physics
 var vitals
 var inventory
 var camera
+var input
 
 var states
 var last_state
@@ -17,6 +18,8 @@ func _ready():
 	vitals = $Vitals
 	inventory = $Inventory
 	camera = $CameraAnchor
+	input = $Input
+	
 
 	states = {
 		combat = {
