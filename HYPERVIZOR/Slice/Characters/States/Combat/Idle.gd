@@ -19,8 +19,7 @@ func update_state(player):
 	if (Input.is_action_pressed("player_up")):
 		player.current_state = player.states.combat["jump"]
 
-	elif (Input.is_action_pressed("player_right")
-	or  Input.is_action_pressed("player_left")):
+	if (Input.is_action_pressed("player_right") or Input.is_action_pressed("player_left")):
 		player.current_state = player.states.combat["walk"]
 
 	else:
