@@ -81,7 +81,6 @@ script = ExtResource( 13 )
 script = ExtResource( 14 )
 
 [node name="PolySprite" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Polygon2D8" type="Polygon2D" parent="PolySprite"]
 position = Vector2( 21.5206, -29.9897 )

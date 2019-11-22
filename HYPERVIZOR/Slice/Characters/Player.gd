@@ -5,6 +5,7 @@ var sprite
 var physics
 var vitals
 var inventory
+var camera
 
 var states
 var last_state
@@ -15,6 +16,7 @@ func _ready():
 	physics = $Physics
 	vitals = $Vitals
 	inventory = $Inventory
+	camera = $CameraAnchor
 
 	states = {
 		combat = {
@@ -41,6 +43,9 @@ func _physics_process(delta):
 	$Label.text = current_mode
 	# delete above
 	
+	if current_mode == "combat" and current_target != null:
+		camera.position.x = (current_target.position.distance_to(self.position) / 2)
+		
 	if current_state != last_state:
 		print("current state: " + current_state.name)
 		last_state = current_state

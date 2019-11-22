@@ -125,7 +125,9 @@ margin_top = -158.0
 margin_right = 18.0
 margin_bottom = -144.0
 
-[node name="Camera" type="Camera2D" parent="PC"]
+[node name="CameraAnchor" type="Node2D" parent="PC"]
+
+[node name="Camera" type="Camera2D" parent="PC/CameraAnchor"]
 current = true
 limit_left = -361
 limit_top = -24
@@ -135,11 +137,11 @@ drag_margin_top = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="PauseMenu" parent="PC/Camera" instance=ExtResource( 9 )]
+[node name="PauseMenu" parent="PC/CameraAnchor/Camera" instance=ExtResource( 9 )]
 pause_mode = 2
 script = ExtResource( 10 )
 
-[node name="MenuTitle" type="Label" parent="PC/Camera/PauseMenu"]
+[node name="MenuTitle" type="Label" parent="PC/CameraAnchor/Camera/PauseMenu"]
 visible = false
 margin_left = 45.3103
 margin_top = 30.9827
