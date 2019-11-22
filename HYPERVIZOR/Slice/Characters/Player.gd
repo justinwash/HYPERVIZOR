@@ -43,6 +43,8 @@ func _physics_process(delta):
 	$Label.text = current_mode
 	# delete above
 	
+	# this currently does not work, even though it seems like it should according to this:
+	# https://godotengine.org/qa/10929/2d-camera-follow-two-players
 	if current_mode == "combat" and current_target != null:
 		camera.position.x = (current_target.position.distance_to(self.position) / 2)
 		
