@@ -46,7 +46,10 @@ func _physics_process(delta):
 	# this currently does not work, even though it seems like it should according to this:
 	# https://godotengine.org/qa/10929/2d-camera-follow-two-players
 	if current_mode == "combat" and current_target != null:
-		camera.position.x = (current_target.position.distance_to(self.position) / 2)
+		camera.global_position = (current_target.global_position + self.global_position) / 2
+	
+	else:
+		camera.global_position = self.global_position
 		
 	if current_state != last_state:
 		print("current state: " + current_state.name)

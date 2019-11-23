@@ -149,6 +149,13 @@ margin_right = 96.3103
 margin_bottom = 44.9827
 text = "PAUSED"
 
+[node name="ColorRect" type="ColorRect" parent="PC/CameraAnchor"]
+margin_right = 6.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Dummy" parent="Enemies" groups=[
