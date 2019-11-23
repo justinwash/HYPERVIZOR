@@ -47,9 +47,11 @@ func _physics_process(delta):
 	# https://godotengine.org/qa/10929/2d-camera-follow-two-players
 	if current_mode == "combat" and current_target != null:
 		camera.global_position = (current_target.global_position + self.global_position) / 2
+		camera.get_node("Camera").set_zoom(Vector2(0.8, 0.8))
 	
 	else:
 		camera.global_position = self.global_position
+		camera.get_node("Camera").set_zoom(Vector2(1, 1))
 		
 	if current_state != last_state:
 		print("current state: " + current_state.name)
