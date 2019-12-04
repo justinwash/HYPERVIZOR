@@ -1,21 +1,22 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
 [ext_resource path="res://Slice/Characters/Properties/Vitals.gd" type="Script" id=3]
 [ext_resource path="res://Slice/Characters/Properties/Physics.gd" type="Script" id=4]
-[ext_resource path="res://Slice/Characters/ContextualComponents/ExplorationComponents.gd" type="Script" id=5]
-[ext_resource path="res://Slice/Characters/ContextualComponents/CombatComponents.gd" type="Script" id=6]
-[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=7]
-[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=8]
-[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=9]
-[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=10]
-[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=11]
-[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=12]
-[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=13]
-[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=14]
-[ext_resource path="res://Slice/Characters/Handlers/Input.gd" type="Script" id=15]
-[ext_resource path="res://Slice/Characters/States/Combat/Dash.gd" type="Script" id=16]
+[ext_resource path="res://Slice/Characters/Handlers/Input.gd" type="Script" id=5]
+[ext_resource path="res://Slice/Characters/ContextualComponents/ExplorationComponents.gd" type="Script" id=6]
+[ext_resource path="res://Slice/Characters/ContextualComponents/CombatComponents.gd" type="Script" id=7]
+[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=8]
+[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=9]
+[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=10]
+[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=11]
+[ext_resource path="res://Slice/Characters/States/Combat/Dash.gd" type="Script" id=12]
+[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=13]
+[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=14]
+[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=15]
+[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=16]
+[ext_resource path="res://Art WIP/hyper_suit.png" type="Texture" id=17]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.9434
@@ -37,14 +38,14 @@ script = ExtResource( 3 )
 script = ExtResource( 4 )
 
 [node name="Input" type="Node2D" parent="."]
-script = ExtResource( 15 )
+script = ExtResource( 5 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( -0.475655, 2.85392 )
 shape = SubResource( 1 )
 
 [node name="ExplorationComponents" type="Node2D" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="InteractionRadius" type="Area2D" parent="ExplorationComponents"]
 
@@ -53,42 +54,43 @@ shape = SubResource( 2 )
 
 [node name="CombatComponents" type="Node2D" parent="."]
 visible = false
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="States" type="Node2D" parent="."]
 
 [node name="Combat" type="Node2D" parent="States"]
 
 [node name="Idle" type="Node2D" parent="States/Combat"]
-script = ExtResource( 7 )
-
-[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 8 )
 
-[node name="Jump" type="Node2D" parent="States/Combat"]
+[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 9 )
 
-[node name="Crouch" type="Node2D" parent="States/Combat"]
+[node name="Jump" type="Node2D" parent="States/Combat"]
 script = ExtResource( 10 )
 
+[node name="Crouch" type="Node2D" parent="States/Combat"]
+script = ExtResource( 11 )
+
 [node name="Dash" type="Node2D" parent="States/Combat"]
-script = ExtResource( 16 )
+script = ExtResource( 12 )
 
 [node name="Exploration" type="Node2D" parent="States"]
 
 [node name="Idle" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 11 )
-
-[node name="Walk" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 12 )
-
-[node name="Jump" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 13 )
 
-[node name="Crouch" type="Node2D" parent="States/Exploration"]
+[node name="Walk" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 14 )
 
+[node name="Jump" type="Node2D" parent="States/Exploration"]
+script = ExtResource( 15 )
+
+[node name="Crouch" type="Node2D" parent="States/Exploration"]
+script = ExtResource( 16 )
+
 [node name="PolySprite" type="Node2D" parent="."]
+visible = false
 
 [node name="Polygon2D8" type="Polygon2D" parent="PolySprite"]
 position = Vector2( 21.5206, -29.9897 )
@@ -138,5 +140,9 @@ polygon = PoolVector2Array( -6.06327, -39.9156, -9.44885, -38.0689, -13.8347, -3
 [node name="Polygon2D7" type="Polygon2D" parent="PolySprite"]
 color = Color( 0.552941, 0.552941, 0.552941, 1 )
 polygon = PoolVector2Array( -18.7863, 5.17336, -18.4468, 6.6282, -15.6342, 7.59809, -14.1793, 7.40411, -11.7061, 5.65831, -12.1426, 4.25197, -14.4218, 5.07638, -15.7796, 5.36734 )
+
+[node name="hyper_suit" type="Sprite" parent="."]
+position = Vector2( -2, -25 )
+texture = ExtResource( 17 )
 [connection signal="area_entered" from="ExplorationComponents/InteractionRadius" to="." method="_on_InteractionRadius_area_entered"]
 [connection signal="area_exited" from="ExplorationComponents/InteractionRadius" to="." method="_on_InteractionRadius_area_exited"]

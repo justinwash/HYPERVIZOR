@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/walking reference.png-202797acfecd223854d04116f42dd14a.stex"
+path="res://.import/walking reference.png-4e9b906f0e582eb0ea35039286dcdf8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walking reference.png"
-dest_files=[ "res://.import/walking reference.png-202797acfecd223854d04116f42dd14a.stex" ]
+source_file="res://Art WIP/walking reference.png"
+dest_files=[ "res://.import/walking reference.png-4e9b906f0e582eb0ea35039286dcdf8f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/palette.png-bfe6d9b591990940fd071a7c86db782c.stex"
+path="res://.import/hyper_suit.png-7c33ad3e7c54f0e538be859420dc91ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art WIP/palette.png"
-dest_files=[ "res://.import/palette.png-bfe6d9b591990940fd071a7c86db782c.stex" ]
+source_file="res://Art WIP/hyper_suit.png"
+dest_files=[ "res://.import/hyper_suit.png-7c33ad3e7c54f0e538be859420dc91ba.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
