@@ -13,7 +13,7 @@ var last_state
 var current_state
 
 func _ready():
-	sprite = $hyper_suit
+	sprite = $PolyPoser
 	physics = $Physics
 	vitals = $Vitals
 	inventory = $Inventory

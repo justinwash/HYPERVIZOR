@@ -117,7 +117,7 @@ position = Vector2( 932, 256 )
 position = Vector2( 1259, 258 )
 
 [node name="PC" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1118, 238 )
+position = Vector2( -145, 239 )
 
 [node name="Label" type="Label" parent="PC"]
 margin_left = -22.0
