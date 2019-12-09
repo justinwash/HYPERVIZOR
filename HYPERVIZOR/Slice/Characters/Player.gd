@@ -52,7 +52,8 @@ func _physics_process(delta):
 		last_state = current_state
 		if current_state.has_method("ready_state"):
 			current_state.ready_state(self)
-
+	
+	set_camera_position()
 	current_state.update_state(self)
 	
 # Mode Variables
