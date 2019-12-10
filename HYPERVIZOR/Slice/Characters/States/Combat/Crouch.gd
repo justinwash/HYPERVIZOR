@@ -9,10 +9,14 @@ func ready_state(player):
 func update_state(player):
 	if  (Input.is_action_pressed("player_right")):
 		move_dir = 0.5
+		player.anim.play("Combat.CrouchWalk")
 	elif Input.is_action_pressed("player_left"):
 		move_dir = -0.5
+		player.anim.play("Combat.CrouchWalk")
 	else:
 		move_dir = 0
+		if player.anim.current_animation != "Combat.Crouch":
+			player.anim.play("Combat.Crouch")
 
 	player.move_and_slide(Vector2(player.physics.COMBAT_MOVE_SPEED * move_dir, player.physics.COMBAT_GRAVITY), Vector2(0,-1))
 
