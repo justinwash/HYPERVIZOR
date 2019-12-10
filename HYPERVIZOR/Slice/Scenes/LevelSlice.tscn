@@ -120,12 +120,6 @@ position = Vector2( 1259, 258 )
 [node name="PC" parent="." instance=ExtResource( 8 )]
 position = Vector2( -145, 239 )
 
-[node name="Label" type="Label" parent="PC"]
-margin_left = -22.0
-margin_top = -158.0
-margin_right = 18.0
-margin_bottom = -144.0
-
 [node name="CameraAnchor" type="Node2D" parent="PC"]
 
 [node name="Camera" type="Camera2D" parent="PC/CameraAnchor"]
@@ -152,6 +146,18 @@ margin_top = 30.9827
 margin_right = 96.3103
 margin_bottom = 44.9827
 text = "PAUSED"
+
+[node name="CombatUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
+
+[node name="ExplorationUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
+
+[node name="GeneralUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
+
+[node name="Label" type="Label" parent="PC/CameraAnchor/Camera/GeneralUI"]
+margin_left = 461.705
+margin_top = 9.42788
+margin_right = 588.705
+margin_bottom = 23.4279
 
 [node name="ColorRect" type="ColorRect" parent="PC/CameraAnchor"]
 visible = false

@@ -48,7 +48,7 @@ func _ready():
 
 func _physics_process(delta):
 	# delete below
-	$Label.text = current_mode
+	$CameraAnchor/Camera/GeneralUI/Label.text = "current mode: " + current_mode
 	# delete above
 	
 	if current_state != last_state:
