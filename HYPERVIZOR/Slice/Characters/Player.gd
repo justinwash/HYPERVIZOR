@@ -8,8 +8,12 @@ var inventory
 var camera
 var input
 var anim
+
+# UI Variables (move these elsewhere pls)
 var pc_health_meter
 var enemy_health_meter
+var CREDITs_meter
+var XP_meter
 
 var states
 var last_state
@@ -25,6 +29,9 @@ func _ready():
 	anim = $AnimationPlayer
 	pc_health_meter = $CameraAnchor/Camera/CombatUI/PCHealthMeter
 	enemy_health_meter = $CameraAnchor/Camera/CombatUI/EnemyHealthMeter
+	CREDITs_meter = $CameraAnchor/Camera/ExplorationUI/CREDITs
+	XP_meter = $CameraAnchor/Camera/ExplorationUI/XP
+	
 	
 	
 	states = {
@@ -55,9 +62,13 @@ func _physics_process(delta):
 	$CameraAnchor/Camera/GeneralUI/Label.text = "current mode: " + current_mode
 	# delete above
 	
+	# UI stuff that needs to go elsewhere below
 	pc_health_meter.value = vitals.HEALTH
 	if (current_target != null):
 		enemy_health_meter.value = current_target.HEALTH
+	CREDITs_meter.text = "CREDITs: " + str(inventory.CREDITs)
+	XP_meter.text = "XP: " + str(inventory.XP)
+	# UI stuff that need to go elsewhere above
 	
 	if current_state != last_state:
 		print("current state: " + current_state.name)

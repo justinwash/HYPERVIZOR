@@ -171,6 +171,18 @@ percent_visible = false
 
 [node name="ExplorationUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
 
+[node name="XP" type="Label" parent="PC/CameraAnchor/Camera/ExplorationUI"]
+margin_left = 9.35849
+margin_top = 320.34
+margin_right = 116.358
+margin_bottom = 334.34
+
+[node name="CREDITs" type="Label" parent="PC/CameraAnchor/Camera/ExplorationUI"]
+margin_left = 6.63216
+margin_top = 338.918
+margin_right = 102.632
+margin_bottom = 352.918
+
 [node name="GeneralUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
 
 [node name="Label" type="Label" parent="PC/CameraAnchor/Camera/GeneralUI"]
