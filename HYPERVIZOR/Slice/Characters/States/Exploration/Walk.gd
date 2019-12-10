@@ -3,6 +3,9 @@ extends Node2D
 
 var move_dir = 0
 
+func ready_state(player):
+	player.anim.play("Exploration.Walk")
+
 func update_state(player):
 	if  (Input.is_action_pressed("player_right")):
 		player.sprite.set_scale(Vector2(1,1))

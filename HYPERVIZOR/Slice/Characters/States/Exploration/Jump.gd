@@ -13,6 +13,8 @@ func ready_state(player):
 		jump_direction_delta = -1
 	else:
 		jump_direction_delta = 0
+	
+	player.anim.play("Exploration.Jump")
 
 func update_state(player):
 	player.move_and_slide(Vector2(player.physics.EXPLORATION_MOVE_SPEED * jump_direction_delta * player.physics.EXPLORATION_JUMP_X_MODIFIER,

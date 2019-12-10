@@ -7,6 +7,7 @@ var vitals
 var inventory
 var camera
 var input
+var anim
 
 var states
 var last_state
@@ -19,6 +20,7 @@ func _ready():
 	inventory = $Inventory
 	camera = $CameraAnchor
 	input = $Input
+	anim = $AnimationPlayer
 	
 
 	states = {
@@ -41,6 +43,8 @@ func _ready():
 	last_state = states.exploration["idle"]
 
 	print("current state: " + current_state.name)
+	if current_state.has_method("ready_state"):
+			current_state.ready_state(self)
 
 func _physics_process(delta):
 	# delete below

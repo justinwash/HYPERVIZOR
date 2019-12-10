@@ -3,6 +3,9 @@ extends Node2D
 
 var move_dir = 0
 
+func ready_state(player):
+	player.anim.play("Combat.Walk")
+	
 func update_state(player):
 	var temp_buffer = player.input.input_buffer
 #	print(temp_buffer)

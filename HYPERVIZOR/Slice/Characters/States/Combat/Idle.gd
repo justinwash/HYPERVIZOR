@@ -1,6 +1,9 @@
 # Combat/Idle
 extends Node2D
 
+func ready_state(player):
+	player.anim.play("Combat.Idle")
+	
 func update_state(player):
 	# below is placeholder stuff
 	if (Input.is_action_pressed("kill")):

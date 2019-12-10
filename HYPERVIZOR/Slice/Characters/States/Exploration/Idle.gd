@@ -1,6 +1,9 @@
 # Exploration/Idle
 extends Node2D
 
+func ready_state(player):
+	player.anim.play("Exploration.Idle")
+	
 func update_state(player):
 	if (Input.is_action_pressed("player_down")):
 		player.current_state = player.states.exploration["crouch"]
