@@ -16,6 +16,9 @@ func update_state(player):
 
 	player.move_and_slide(Vector2(player.physics.EXPLORATION_MOVE_SPEED * move_dir, player.physics.EXPLORATION_GRAVITY), Vector2(0,-1))
 
+	if (Input.is_action_pressed("player_down")):
+		player.current_state = player.states.exploration["crouch"]
+		
 	if Input.is_action_pressed("player_up"):
 		player.current_state = player.states.exploration["jump"]
 
