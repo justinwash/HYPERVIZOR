@@ -10,7 +10,8 @@ func ready_state(player):
 
 	elif player.input.input_buffer.back().dpad_state == 4:
 		move_dir = -4
-
+	
+	player.anim.play("Combat.Dash")
 	duration = 16
 
 func update_state(player):
