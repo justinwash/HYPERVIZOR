@@ -149,15 +149,35 @@ text = "PAUSED"
 
 [node name="CombatUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
 
+[node name="PCHealthMeter" type="ProgressBar" parent="PC/CameraAnchor/Camera/CombatUI"]
+visible = false
+margin_left = 16.573
+margin_top = 10.8667
+margin_right = 159.573
+margin_bottom = 24.8667
+step = 1.0
+value = 100.0
+percent_visible = false
+
+[node name="EnemyHealthMeter" type="ProgressBar" parent="PC/CameraAnchor/Camera/CombatUI"]
+visible = false
+margin_left = 481.361
+margin_top = 12.6717
+margin_right = 624.361
+margin_bottom = 26.6717
+step = 1.0
+value = 100.0
+percent_visible = false
+
 [node name="ExplorationUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
 
 [node name="GeneralUI" type="CanvasLayer" parent="PC/CameraAnchor/Camera"]
 
 [node name="Label" type="Label" parent="PC/CameraAnchor/Camera/GeneralUI"]
-margin_left = 461.705
-margin_top = 9.42788
-margin_right = 588.705
-margin_bottom = 23.4279
+margin_left = 476.145
+margin_top = 335.231
+margin_right = 603.145
+margin_bottom = 349.231
 
 [node name="ColorRect" type="ColorRect" parent="PC/CameraAnchor"]
 visible = false

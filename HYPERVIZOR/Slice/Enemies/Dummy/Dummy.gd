@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 var halted = false
+
+var HEALTH = 100
 var xp_reward = 25
 
 # State Variables

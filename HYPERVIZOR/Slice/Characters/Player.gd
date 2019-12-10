@@ -8,6 +8,8 @@ var inventory
 var camera
 var input
 var anim
+var pc_health_meter
+var enemy_health_meter
 
 var states
 var last_state
@@ -21,8 +23,10 @@ func _ready():
 	camera = $CameraAnchor
 	input = $Input
 	anim = $AnimationPlayer
+	pc_health_meter = $CameraAnchor/Camera/CombatUI/PCHealthMeter
+	enemy_health_meter = $CameraAnchor/Camera/CombatUI/EnemyHealthMeter
 	
-
+	
 	states = {
 		combat = {
 			"idle": $States/Combat/Idle,
@@ -51,6 +55,10 @@ func _physics_process(delta):
 	$CameraAnchor/Camera/GeneralUI/Label.text = "current mode: " + current_mode
 	# delete above
 	
+	pc_health_meter.value = vitals.HEALTH
+	if (current_target != null):
+		enemy_health_meter.value = current_target.HEALTH
+	
 	if current_state != last_state:
 		print("current state: " + current_state.name)
 		last_state = current_state
@@ -66,6 +74,9 @@ var current_mode = "exploration"
 
 # Mode Methods
 func enter_combat_mode(target):
+	pc_health_meter.visible = true
+	enemy_health_meter.visible = true
+	
 	for interactable in get_tree().get_nodes_in_group("Interactables"):
 		interactable.halted = true
 		
@@ -80,6 +91,9 @@ func enter_combat_mode(target):
 	current_mode = "combat"
 	
 func exit_combat_mode():
+	pc_health_meter.visible = false
+	enemy_health_meter.visible = false
+	
 	for interactable in get_tree().get_nodes_in_group("Interactables"):
 		interactable.halted = false
 		
