@@ -118,7 +118,7 @@ position = Vector2( 932, 256 )
 position = Vector2( 1259, 258 )
 
 [node name="PC" parent="." instance=ExtResource( 8 )]
-position = Vector2( -145, 239 )
+position = Vector2( 1114.82, 226.307 )
 
 [node name="CameraAnchor" type="Node2D" parent="PC"]
 

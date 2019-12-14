@@ -22,6 +22,9 @@ func update_state(player):
 		elif player.current_target.global_position.x - player.global_position.x <= 0:
 			player.sprite.set_scale(Vector2(-1,1))
 		
+	if (Input.is_action_just_pressed("A")):
+		player.current_state = player.states.combat["attack"]
+		
 	if (Input.is_action_pressed("player_down")):
 		player.current_state = player.states.combat["crouch"]
 		

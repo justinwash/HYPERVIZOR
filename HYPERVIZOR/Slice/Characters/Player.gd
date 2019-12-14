@@ -8,6 +8,7 @@ var inventory
 var camera
 var input
 var anim
+var attacks
 
 # UI Variables (move these elsewhere pls)
 var pc_health_meter
@@ -27,6 +28,7 @@ func _ready():
 	camera = $CameraAnchor
 	input = $Input
 	anim = $AnimationPlayer
+	attacks = $CombatComponents/Attacks
 	pc_health_meter = $CameraAnchor/Camera/CombatUI/PCHealthMeter
 	enemy_health_meter = $CameraAnchor/Camera/CombatUI/EnemyHealthMeter
 	CREDITs_meter = $CameraAnchor/Camera/ExplorationUI/CREDITs
@@ -40,7 +42,8 @@ func _ready():
 			"walk": $States/Combat/Walk,
 			"dash": $States/Combat/Dash,
 			"jump": $States/Combat/Jump,
-			"crouch": $States/Combat/Crouch
+			"crouch": $States/Combat/Crouch,
+			"attack": $States/Combat/Attack
 		},
 		exploration = {
 			"idle": $States/Exploration/Idle,
