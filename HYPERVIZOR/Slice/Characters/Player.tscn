@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
@@ -8,16 +8,17 @@
 [ext_resource path="res://Slice/Characters/ContextualComponents/ExplorationComponents.gd" type="Script" id=6]
 [ext_resource path="res://Slice/Characters/ContextualComponents/CombatComponents.gd" type="Script" id=7]
 [ext_resource path="res://Slice/Characters/ContextualComponents/Attacks/5+1.gd" type="Script" id=8]
-[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=9]
-[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=10]
-[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=11]
-[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=12]
-[ext_resource path="res://Slice/Characters/States/Combat/Dash.gd" type="Script" id=13]
-[ext_resource path="res://Slice/Characters/States/Combat/Attack.gd" type="Script" id=14]
-[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=15]
-[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=16]
-[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=17]
-[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=18]
+[ext_resource path="res://Slice/Characters/ContextualComponents/Hitbox.gd" type="Script" id=9]
+[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=10]
+[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=11]
+[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=12]
+[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=13]
+[ext_resource path="res://Slice/Characters/States/Combat/Dash.gd" type="Script" id=14]
+[ext_resource path="res://Slice/Characters/States/Combat/Attack.gd" type="Script" id=15]
+[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=16]
+[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=17]
+[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=18]
+[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack.5+A"
@@ -550,6 +551,18 @@ tracks/43/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 2.72609, 2.72609, -30.0627, 2.72609 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("CombatComponents/Hitbox/HitboxShape:disabled")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0, 0.18, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -6945,10 +6958,13 @@ height = 58.7845
 [sub_resource type="CircleShape2D" id=16]
 radius = 76.1124
 
-[sub_resource type="Shader" id=17]
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 20.1922, 10 )
 
-[sub_resource type="ShaderMaterial" id=18]
-shader = SubResource( 17 )
+[sub_resource type="Shader" id=18]
+
+[sub_resource type="ShaderMaterial" id=19]
+shader = SubResource( 18 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 60.7056, 59.8062 )
@@ -7010,13 +7026,22 @@ script = ExtResource( 6 )
 shape = SubResource( 16 )
 
 [node name="CombatComponents" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 7 )
 
 [node name="Attacks" type="Node2D" parent="CombatComponents"]
 
 [node name="5+A" type="Node2D" parent="CombatComponents/Attacks"]
 script = ExtResource( 8 )
+
+[node name="Hitbox" type="Area2D" parent="CombatComponents"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 9 )
+
+[node name="HitboxShape" type="CollisionShape2D" parent="CombatComponents/Hitbox"]
+position = Vector2( 58.0903, -16.9046 )
+shape = SubResource( 17 )
+disabled = true
 
 [node name="States" type="Node2D" parent="."]
 __meta__ = {
@@ -7029,37 +7054,37 @@ __meta__ = {
 }
 
 [node name="Idle" type="Node2D" parent="States/Combat"]
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Jump" type="Node2D" parent="States/Combat"]
+[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Crouch" type="Node2D" parent="States/Combat"]
+[node name="Jump" type="Node2D" parent="States/Combat"]
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Dash" type="Node2D" parent="States/Combat"]
+[node name="Crouch" type="Node2D" parent="States/Combat"]
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Attack" type="Node2D" parent="States/Combat"]
+[node name="Dash" type="Node2D" parent="States/Combat"]
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Attack" type="Node2D" parent="States/Combat"]
+script = ExtResource( 15 )
 
 [node name="Exploration" type="Node2D" parent="States"]
 __meta__ = {
@@ -7067,36 +7092,37 @@ __meta__ = {
 }
 
 [node name="Idle" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Walk" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 16 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Jump" type="Node2D" parent="States/Exploration"]
+[node name="Walk" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Crouch" type="Node2D" parent="States/Exploration"]
+[node name="Jump" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_bone_": true
 }
 
+[node name="Crouch" type="Node2D" parent="States/Exploration"]
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_bone_": true
+}
+
 [node name="PolyPoser" type="Node2D" parent="."]
+editor/display_folded = true
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Hip" type="Polygon2D" parent="PolyPoser"]
-position = Vector2( -0.356, 6.645 )
+position = Vector2( -0.356, 5.985 )
 color = Color( 0.184314, 0, 0, 1 )
 offset = Vector2( 1.03, 0 )
 polygon = PoolVector2Array( 6.22724, -1.35233, 6.49664, 2.49236, 4.3761, 5.48267, -0.180573, 7.76101, -4.59484, 6.47945, -7.58515, 4.20111, -8.72431, 0.783615, -8.01234, -2.77628, -5.734, -5.33941, -2.74369, -5.4818, 2.09776, -2.49149, 4.66089, -2.49149 )
@@ -7204,7 +7230,7 @@ __meta__ = {
 }
 
 [node name="Head" type="Polygon2D" parent="PolyPoser/Hip/Torso"]
-material = SubResource( 18 )
+material = SubResource( 19 )
 position = Vector2( 0, -43.17 )
 rotation = 0.121908
 color = Color( 0.454902, 0, 0, 1 )

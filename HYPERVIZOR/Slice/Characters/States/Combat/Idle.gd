@@ -16,7 +16,7 @@ func update_state(player):
 			player.exit_combat_mode()
 	# above is placeholder stuff
 	
-	if player.current_target != null:
+	if (player.current_target != null && is_instance_valid(player.current_target)):
 		if player.current_target.global_position.x - player.global_position.x > 0:
 			player.sprite.set_scale(Vector2(1,1))
 		elif player.current_target.global_position.x - player.global_position.x <= 0:

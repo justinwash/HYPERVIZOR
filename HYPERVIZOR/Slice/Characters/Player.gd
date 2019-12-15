@@ -9,6 +9,7 @@ var camera
 var input
 var anim
 var attacks
+var hitbox
 
 # UI Variables (move these elsewhere pls)
 var pc_health_meter
@@ -29,6 +30,7 @@ func _ready():
 	input = $Input
 	anim = $AnimationPlayer
 	attacks = $CombatComponents/Attacks
+	hitbox = $CombatComponents/Hitbox
 	pc_health_meter = $CameraAnchor/Camera/CombatUI/PCHealthMeter
 	enemy_health_meter = $CameraAnchor/Camera/CombatUI/EnemyHealthMeter
 	CREDITs_meter = $CameraAnchor/Camera/ExplorationUI/CREDITs
@@ -67,7 +69,7 @@ func _physics_process(delta):
 	
 	# UI stuff that needs to go elsewhere below
 	pc_health_meter.value = vitals.HEALTH
-	if (current_target != null):
+	if (current_target != null && is_instance_valid(current_target)):
 		enemy_health_meter.value = current_target.HEALTH
 	CREDITs_meter.text = "CREDITs: " + str(inventory.CREDITs)
 	XP_meter.text = "XP: " + str(inventory.XP)
@@ -118,7 +120,7 @@ func exit_combat_mode():
 	current_mode = "exploration"
 
 func set_camera_position():
-	if current_mode == "combat" and current_target != null:
+	if current_mode == "combat" and (current_target != null && is_instance_valid(current_target)):
 		camera.global_position = (current_target.global_position + self.global_position) / 2
 		camera.get_node("Camera").set_zoom(Vector2(0.8, 0.8))
 	

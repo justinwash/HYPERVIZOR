@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var halted = false
 
-var HEALTH = 100
-var xp_reward = 25
+export var HEALTH = 100
+export var xp_reward = 25
 
 # State Variables
 var sprite
@@ -20,7 +20,8 @@ func _ready():
 
 	states = {
 		combat = {
-			"idle": $States/Combat/Idle
+			"idle": $States/Combat/Idle,
+			"reel": $States/Combat/Reel
 		},
 		exploration = {
 			"idle": $States/Exploration/Idle,
@@ -52,3 +53,10 @@ func activate():
 		
 func on_exit(player):
 	pass
+	
+func _on_Hurtbox_area_entered(area):
+	HEALTH -= area.current_attack.DAMAGE
+	if HEALTH <= 0:
+		queue_free()
+		area.owner.exit_combat_mode()
+	# current_state = states.combat["reel"]
