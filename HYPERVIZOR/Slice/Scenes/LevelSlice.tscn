@@ -10,7 +10,7 @@
 [ext_resource path="res://Slice/Characters/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Slice/Menus/PauseMenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Slice/Menus/PauseMenu.gd" type="Script" id=10]
-[ext_resource path="res://Slice/Enemies/Dummy/Dummy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Slice/Enemies/BigBoi/BigBoi.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -200,12 +200,7 @@ __meta__ = {
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Dummy" parent="Enemies" groups=[
+[node name="BigBoi" parent="Enemies" groups=[
 "Enemies",
 ] instance=ExtResource( 11 )]
-position = Vector2( 1431, 249 )
-
-[node name="Dummy2" parent="Enemies" groups=[
-"Enemies",
-] instance=ExtResource( 11 )]
-position = Vector2( 235, 138 )
+position = Vector2( 1346.03, 249.827 )

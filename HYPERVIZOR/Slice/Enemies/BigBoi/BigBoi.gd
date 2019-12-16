@@ -9,6 +9,7 @@ export var xp_reward = 25
 var sprite
 var physics
 var vitals
+var anim
 
 var states
 var last_state
@@ -17,12 +18,14 @@ var current_state
 func _ready():
 	physics = $Physics
 	vitals = $Vitals
-	sprite = $ColorRect
+	sprite = $PolyPoser
+	anim = $AnimationPlayer
 
 	states = {
 		combat = {
 			"idle": $States/Combat/Idle,
-			"reel": $States/Combat/Reel
+			"reel": $States/Combat/Reel,
+			"defeat": $States/Combat/Defeat
 		},
 		exploration = {
 			"idle": $States/Exploration/Idle,
@@ -30,6 +33,7 @@ func _ready():
 	}
 
 	current_state = states.exploration["idle"]
+	current_state.ready_state(self)
 	last_state = states.exploration["idle"]
 
 	print("current state: " + current_state.name)
@@ -58,6 +62,6 @@ func on_exit(player):
 func _on_Hurtbox_area_entered(area):
 	HEALTH -= area.current_attack.DAMAGE
 	if HEALTH <= 0:
-		queue_free()
-		area.owner.exit_combat_mode()
-	# current_state = states.combat["reel"]
+		current_state = states.combat["defeat"]
+	else:
+		current_state = states.combat["reel"]

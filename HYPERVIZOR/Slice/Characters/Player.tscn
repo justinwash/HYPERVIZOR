@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
@@ -6961,12 +6961,17 @@ radius = 76.1124
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 20.1922, 10 )
 
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 18.4141, 50.3528 )
+
 [sub_resource type="Shader" id=18]
 
 [sub_resource type="ShaderMaterial" id=19]
 shader = SubResource( 18 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"PC",
+]]
 position = Vector2( 60.7056, 59.8062 )
 script = ExtResource( 1 )
 
@@ -7043,6 +7048,12 @@ position = Vector2( 58.0903, -16.9046 )
 shape = SubResource( 17 )
 disabled = true
 
+[node name="Hurtbox" type="Area2D" parent="CombatComponents"]
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="CombatComponents/Hurtbox"]
+position = Vector2( -1.19165, 1.98608 )
+shape = SubResource( 20 )
+
 [node name="States" type="Node2D" parent="."]
 __meta__ = {
 "_edit_bone_": true
@@ -7116,7 +7127,6 @@ __meta__ = {
 }
 
 [node name="PolyPoser" type="Node2D" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_bone_": true
 }
