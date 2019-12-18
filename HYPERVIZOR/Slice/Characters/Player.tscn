@@ -6961,13 +6961,13 @@ radius = 76.1124
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 20.1922, 10 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 18.4141, 50.3528 )
 
-[sub_resource type="Shader" id=18]
+[sub_resource type="Shader" id=19]
 
-[sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 18 )
+[sub_resource type="ShaderMaterial" id=20]
+shader = SubResource( 19 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "PC",
@@ -7052,7 +7052,7 @@ disabled = true
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="CombatComponents/Hurtbox"]
 position = Vector2( -1.19165, 1.98608 )
-shape = SubResource( 20 )
+shape = SubResource( 18 )
 
 [node name="States" type="Node2D" parent="."]
 __meta__ = {
@@ -7240,7 +7240,7 @@ __meta__ = {
 }
 
 [node name="Head" type="Polygon2D" parent="PolyPoser/Hip/Torso"]
-material = SubResource( 19 )
+material = SubResource( 20 )
 position = Vector2( 0, -43.17 )
 rotation = 0.121908
 color = Color( 0.454902, 0, 0, 1 )

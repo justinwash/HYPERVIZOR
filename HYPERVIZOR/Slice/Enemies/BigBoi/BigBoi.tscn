@@ -8,7 +8,7 @@
 [ext_resource path="res://Slice/Enemies/BigBoi/States/Combat/Defeat.gd" type="Script" id=6]
 [ext_resource path="res://Slice/Enemies/BigBoi/States/Exploration/Idle.gd" type="Script" id=7]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=1]
 resource_name = "Combat.Defeat"
 length = 0.75
 step = 0.01
@@ -541,7 +541,7 @@ tracks/43/keys = {
 "values": [ -12.4941, -26.2402, -39.7918 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Combat.Idle"
 length = 2.0
 loop = true
@@ -1074,7 +1074,7 @@ tracks/43/keys = {
 "values": [ -12.4941, -18.3489 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 resource_name = "Combat.Reel"
 length = 0.75
 step = 0.01
@@ -1607,7 +1607,7 @@ tracks/43/keys = {
 "values": [ -12.4941, -48.0096, -12.4941 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "Exploration.Idle"
 length = 2.0
 loop = true
@@ -2140,29 +2140,29 @@ tracks/43/keys = {
 "values": [ -12.4941, -18.3489 ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.5083, 43.6902 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 20.5083, 30.5213 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=6]
 radius = 79.3816
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 23.4129, 47.1205 )
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=8]
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
 
 [node name="BigBoi" type="KinematicBody2D"]
 scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Combat.Defeat = SubResource( 9 )
-anims/Combat.Idle = SubResource( 6 )
-anims/Combat.Reel = SubResource( 8 )
-anims/Exploration.Idle = SubResource( 7 )
+anims/Combat.Defeat = SubResource( 1 )
+anims/Combat.Idle = SubResource( 2 )
+anims/Combat.Reel = SubResource( 3 )
+anims/Exploration.Idle = SubResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -2173,8 +2173,8 @@ margin_bottom = 31.0
 color = Color( 0.427451, 0.0235294, 0.0235294, 1 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2( 1.33798, -17.0788 )
-shape = SubResource( 1 )
+position = Vector2( 1.33798, -7.95882 )
+shape = SubResource( 5 )
 
 [node name="Vitals" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -2187,7 +2187,7 @@ visible = false
 
 [node name="InteractableShape" type="CollisionShape2D" parent="InteractableRadius"]
 position = Vector2( -0.668994, -15.7213 )
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="States" type="Node2D" parent="."]
 
@@ -2217,7 +2217,7 @@ collision_mask = 2
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
 visible = false
 position = Vector2( 0.440344, -8.27709 )
-shape = SubResource( 3 )
+shape = SubResource( 7 )
 
 [node name="PolyPoser" type="Node2D" parent="."]
 position = Vector2( 2.06747, -18.5881 )
@@ -2336,7 +2336,7 @@ __meta__ = {
 }
 
 [node name="Head" type="Polygon2D" parent="PolyPoser/Hip/Torso"]
-material = SubResource( 5 )
+material = SubResource( 9 )
 position = Vector2( 0, -43.17 )
 rotation = -0.694497
 color = Color( 0, 0.337255, 0, 1 )

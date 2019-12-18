@@ -10,6 +10,7 @@ var input
 var anim
 var attacks
 var hitbox
+var combat_components
 
 # UI Variables (move these elsewhere pls)
 var pc_health_meter
@@ -35,6 +36,7 @@ func _ready():
 	enemy_health_meter = $CameraAnchor/Camera/CombatUI/EnemyHealthMeter
 	CREDITs_meter = $CameraAnchor/Camera/ExplorationUI/CREDITs
 	XP_meter = $CameraAnchor/Camera/ExplorationUI/XP
+	combat_components = $CombatComponents
 	
 	
 	
