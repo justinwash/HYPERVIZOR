@@ -10,6 +10,8 @@ var sprite
 var physics
 var vitals
 var anim
+var attacks
+var hitbox
 
 var states
 var last_state
@@ -20,12 +22,15 @@ func _ready():
 	vitals = $Vitals
 	sprite = $PolyPoser
 	anim = $AnimationPlayer
+	attacks = $CombatComponents/Attacks
+	hitbox = $CombatComponents/Hitbox
 
 	states = {
 		combat = {
 			"idle": $States/Combat/Idle,
 			"reel": $States/Combat/Reel,
-			"defeat": $States/Combat/Defeat
+			"defeat": $States/Combat/Defeat,
+			"attack": $States/Combat/Attack
 		},
 		exploration = {
 			"idle": $States/Exploration/Idle,
@@ -62,6 +67,7 @@ func on_exit(player):
 func _on_Hurtbox_area_entered(area):
 	HEALTH -= area.current_attack.DAMAGE
 	if HEALTH <= 0:
+		area.owner.inventory.XP += xp_reward
 		current_state = states.combat["defeat"]
 	else:
 		current_state = states.combat["reel"]

@@ -47,7 +47,8 @@ func _ready():
 			"dash": $States/Combat/Dash,
 			"jump": $States/Combat/Jump,
 			"crouch": $States/Combat/Crouch,
-			"attack": $States/Combat/Attack
+			"attack": $States/Combat/Attack,
+			"reel": $States/Combat/Reel
 		},
 		exploration = {
 			"idle": $States/Exploration/Idle,
@@ -153,3 +154,11 @@ func _on_InteractionRadius_area_exited(area):
 		area.owner.on_exit(self)
 		nearby_interactables.remove(nearby_interactables.find(null))
 		print(area.owner.name + " not near anymore")
+
+func _on_Hurtbox_area_entered(area):
+	vitals.HEALTH -= area.current_attack.DAMAGE
+	if vitals.HEALTH <= 0:
+		print("player RIP")
+#		current_state = states.combat["defeat"]
+	else:
+		current_state = states.combat["reel"]

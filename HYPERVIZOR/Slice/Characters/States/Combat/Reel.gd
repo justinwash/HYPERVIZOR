@@ -1,7 +1,7 @@
 extends Node2D
 
-func ready_state(this):
-	this.anim.play("Combat.Reel")
+func ready_state(player):
+	player.anim.play("Combat.Reel")
 	
 func update_state(this):
 	pass
