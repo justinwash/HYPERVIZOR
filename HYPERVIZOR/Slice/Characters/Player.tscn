@@ -1,25 +1,26 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Slice/Characters/Player.gd" type="Script" id=1]
-[ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=2]
-[ext_resource path="res://Slice/Characters/Properties/Vitals.gd" type="Script" id=3]
-[ext_resource path="res://Slice/Characters/Properties/Physics.gd" type="Script" id=4]
-[ext_resource path="res://Slice/Characters/Handlers/Input.gd" type="Script" id=5]
-[ext_resource path="res://Slice/Characters/ContextualComponents/ExplorationComponents.gd" type="Script" id=6]
-[ext_resource path="res://Slice/Characters/ContextualComponents/CombatComponents.gd" type="Script" id=7]
-[ext_resource path="res://Slice/Characters/ContextualComponents/Attacks/5+1.gd" type="Script" id=8]
-[ext_resource path="res://Slice/Characters/ContextualComponents/Hitbox.gd" type="Script" id=9]
-[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=10]
-[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=11]
-[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=12]
-[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=13]
-[ext_resource path="res://Slice/Characters/States/Combat/Dash.gd" type="Script" id=14]
-[ext_resource path="res://Slice/Characters/States/Combat/Attack.gd" type="Script" id=15]
-[ext_resource path="res://Slice/Characters/States/Combat/Reel.gd" type="Script" id=16]
-[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=17]
-[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=18]
-[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=19]
-[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=20]
+[ext_resource path="res://Art WIP/SimpleRadialGradient.png" type="Texture" id=2]
+[ext_resource path="res://Slice/Characters/Properties/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Slice/Characters/Properties/Vitals.gd" type="Script" id=4]
+[ext_resource path="res://Slice/Characters/Properties/Physics.gd" type="Script" id=5]
+[ext_resource path="res://Slice/Characters/Handlers/Input.gd" type="Script" id=6]
+[ext_resource path="res://Slice/Characters/ContextualComponents/ExplorationComponents.gd" type="Script" id=7]
+[ext_resource path="res://Slice/Characters/ContextualComponents/CombatComponents.gd" type="Script" id=8]
+[ext_resource path="res://Slice/Characters/ContextualComponents/Attacks/5+1.gd" type="Script" id=9]
+[ext_resource path="res://Slice/Characters/ContextualComponents/Hitbox.gd" type="Script" id=10]
+[ext_resource path="res://Slice/Characters/States/Combat/Idle.gd" type="Script" id=11]
+[ext_resource path="res://Slice/Characters/States/Combat/Walk.gd" type="Script" id=12]
+[ext_resource path="res://Slice/Characters/States/Combat/Jump.gd" type="Script" id=13]
+[ext_resource path="res://Slice/Characters/States/Combat/Crouch.gd" type="Script" id=14]
+[ext_resource path="res://Slice/Characters/States/Combat/Dash.gd" type="Script" id=15]
+[ext_resource path="res://Slice/Characters/States/Combat/Attack.gd" type="Script" id=16]
+[ext_resource path="res://Slice/Characters/States/Combat/Reel.gd" type="Script" id=17]
+[ext_resource path="res://Slice/Characters/States/Exploration/Idle.gd" type="Script" id=18]
+[ext_resource path="res://Slice/Characters/States/Exploration/Walk.gd" type="Script" id=19]
+[ext_resource path="res://Slice/Characters/States/Exploration/Jump.gd" type="Script" id=20]
+[ext_resource path="res://Slice/Characters/States/Exploration/Crouch.gd" type="Script" id=21]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attack.5+A"
@@ -3226,7 +3227,7 @@ tracks/43/keys = {
 "values": [ 2.72609, 2.72609, 2.72609, 2.72609, 2.72609 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=7]
 resource_name = "Combat.Reel"
 length = 0.6
 tracks/0/type = "value"
@@ -3758,7 +3759,7 @@ tracks/43/keys = {
 "values": [ 2.72609, 2.72609, 2.72609 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -4290,7 +4291,7 @@ tracks/43/keys = {
 "values": [ 2.72609, 2.72609, 2.72609 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("PolyPoser/Hip/Torso/RShoulder/RUpperarm/RForearm/RHand/RFingers:position")
@@ -4821,7 +4822,7 @@ tracks/43/keys = {
 "values": [ 2.72609, 2.72609 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 length = 0.7
 loop = true
 step = 0.01
@@ -5354,7 +5355,7 @@ tracks/43/keys = {
 "values": [ 2.72609, 2.72609, 2.72609 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 loop = true
 step = 0.01
 tracks/0/type = "value"
@@ -5886,7 +5887,7 @@ tracks/43/keys = {
 "values": [ 2.72609 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 2.0
 step = 0.01
 tracks/0/type = "value"
@@ -6418,7 +6419,7 @@ tracks/43/keys = {
 "values": [ 2.72609, 2.72609, 2.72609, 2.72609, 2.72609 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 0.8
 loop = true
 step = 0.01
@@ -6951,7 +6952,7 @@ tracks/43/keys = {
 "values": [ -29.7167, -4.73402, -11.1847, -11.1847, -11.1847, -11.1847, -5.03338 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("PolyPoser/Hip/Torso/RShoulder/RUpperarm/RForearm/RHand/RFingers:position")
@@ -7482,31 +7483,35 @@ tracks/43/keys = {
 "values": [ 2.72609 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 
-[sub_resource type="CapsuleShape2D" id=15]
+[sub_resource type="CapsuleShape2D" id=16]
 radius = 15.9434
 height = 58.7845
 
-[sub_resource type="CircleShape2D" id=16]
+[sub_resource type="CircleShape2D" id=17]
 radius = 76.1124
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 20.1922, 10 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 22.3058, 50.3528 )
 
-[sub_resource type="Shader" id=19]
+[sub_resource type="Shader" id=20]
 
-[sub_resource type="ShaderMaterial" id=20]
-shader = SubResource( 19 )
+[sub_resource type="ShaderMaterial" id=21]
+shader = SubResource( 20 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "PC",
 ]]
 position = Vector2( 60.7056, 59.8062 )
 script = ExtResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 2 )
+shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack.5+A = SubResource( 1 )
@@ -7515,36 +7520,36 @@ anims/Combat.CrouchWalk = SubResource( 3 )
 anims/Combat.Dash = SubResource( 4 )
 anims/Combat.Idle = SubResource( 5 )
 anims/Combat.Jump = SubResource( 6 )
-anims/Combat.Reel = SubResource( 21 )
-anims/Combat.Walk = SubResource( 7 )
-anims/Exploration.Crouch = SubResource( 8 )
-anims/Exploration.CrouchWalk = SubResource( 9 )
-anims/Exploration.Idle = SubResource( 10 )
-anims/Exploration.Jump = SubResource( 11 )
-anims/Exploration.Walk = SubResource( 12 )
-anims/Init = SubResource( 13 )
-anims/Run = SubResource( 14 )
+anims/Combat.Reel = SubResource( 7 )
+anims/Combat.Walk = SubResource( 8 )
+anims/Exploration.Crouch = SubResource( 9 )
+anims/Exploration.CrouchWalk = SubResource( 10 )
+anims/Exploration.Idle = SubResource( 11 )
+anims/Exploration.Jump = SubResource( 12 )
+anims/Exploration.Walk = SubResource( 13 )
+anims/Init = SubResource( 14 )
+anims/Run = SubResource( 15 )
 
 [node name="Inventory" type="Node2D" parent="."]
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Vitals" type="Node2D" parent="."]
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Physics" type="Node2D" parent="."]
+[node name="Vitals" type="Node2D" parent="."]
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Input" type="Node2D" parent="."]
+[node name="Physics" type="Node2D" parent="."]
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Input" type="Node2D" parent="."]
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_bone_": true
 }
@@ -7552,34 +7557,34 @@ __meta__ = {
 [node name="Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.475655, 2.85392 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="ExplorationComponents" type="Node2D" parent="."]
 editor/display_folded = true
 visible = false
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="InteractionRadius" type="Area2D" parent="ExplorationComponents"]
 
 [node name="InteractionShape" type="CollisionShape2D" parent="ExplorationComponents/InteractionRadius"]
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="CombatComponents" type="Node2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Attacks" type="Node2D" parent="CombatComponents"]
 
 [node name="5+A" type="Node2D" parent="CombatComponents/Attacks"]
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="Hitbox" type="Area2D" parent="CombatComponents"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="HitboxShape" type="CollisionShape2D" parent="CombatComponents/Hitbox"]
 position = Vector2( 58.0903, -16.9046 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 disabled = true
 
 [node name="Hurtbox" type="Area2D" parent="CombatComponents"]
@@ -7589,7 +7594,7 @@ collision_mask = 4
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="CombatComponents/Hurtbox"]
 position = Vector2( -1.19165, 1.98608 )
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="States" type="Node2D" parent="."]
 __meta__ = {
@@ -7602,40 +7607,40 @@ __meta__ = {
 }
 
 [node name="Idle" type="Node2D" parent="States/Combat"]
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Jump" type="Node2D" parent="States/Combat"]
+[node name="Walk" type="Node2D" parent="States/Combat"]
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Crouch" type="Node2D" parent="States/Combat"]
+[node name="Jump" type="Node2D" parent="States/Combat"]
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Dash" type="Node2D" parent="States/Combat"]
+[node name="Crouch" type="Node2D" parent="States/Combat"]
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Attack" type="Node2D" parent="States/Combat"]
+[node name="Dash" type="Node2D" parent="States/Combat"]
 script = ExtResource( 15 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Attack" type="Node2D" parent="States/Combat"]
+script = ExtResource( 16 )
 
 [node name="Reel" type="Node2D" parent="States/Combat"]
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="Exploration" type="Node2D" parent="States"]
 __meta__ = {
@@ -7643,25 +7648,25 @@ __meta__ = {
 }
 
 [node name="Idle" type="Node2D" parent="States/Exploration"]
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Walk" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Jump" type="Node2D" parent="States/Exploration"]
+[node name="Walk" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Crouch" type="Node2D" parent="States/Exploration"]
+[node name="Jump" type="Node2D" parent="States/Exploration"]
 script = ExtResource( 20 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Crouch" type="Node2D" parent="States/Exploration"]
+script = ExtResource( 21 )
 __meta__ = {
 "_edit_bone_": true
 }
@@ -7724,6 +7729,7 @@ __meta__ = {
 [node name="RThigh" type="Polygon2D" parent="PolyPoser/Hip"]
 position = Vector2( -2.39825, 0 )
 rotation = 0.234356
+z_index = 1
 color = Color( 0.270588, 0, 0, 1 )
 polygon = PoolVector2Array( 5.44876, -1.42209, 2.04791, -2.74464, -1.16402, -1.9889, -4.84828, 0.37281, -6.2653, 3.58473, -6.2653, 7.93027, -5.41509, 18.3218, -4.84828, 23.0452, -4.37594, 24.7456, -2.29764, 25.6903, 0.253007, 26.1626, 3.46493, 22.1005, 6.39344, 13.315, 7.24365, 6.60772, 6.96025, 1.69537 )
 __meta__ = {
@@ -7763,6 +7769,7 @@ __meta__ = {
 
 [node name="Torso" type="Polygon2D" parent="PolyPoser/Hip"]
 rotation = 6.25632
+z_index = 1
 color = Color( 0.258824, 0, 0, 1 )
 polygon = PoolVector2Array( 3.59277, -35.3849, 6.44069, -33.6762, 8.71902, -31.3978, 9.5734, -27.4107, 9.85819, -22.4269, 8.29183, -16.8735, 8.14944, -9.89607, 7.43746, -4.48503, 6.2983, -1.20993, -0.536704, 1.3532, -6.80212, -2.0643, -5.66296, -5.19701, -4.52379, -9.32648, -3.9542, -14.0255, -4.95097, -17.1583, -7.22931, -22.2845, -7.94128, -28.2651, -7.5141, -32.8218, -4.52379, -35.5273, -0.109519, -36.0969 )
 __meta__ = {
@@ -7780,7 +7787,7 @@ __meta__ = {
 }
 
 [node name="Head" type="Polygon2D" parent="PolyPoser/Hip/Torso"]
-material = SubResource( 20 )
+material = SubResource( 21 )
 position = Vector2( 0, -43.17 )
 rotation = 0.121908
 color = Color( 0.454902, 0, 0, 1 )
@@ -7844,7 +7851,7 @@ __meta__ = {
 [node name="LShoulder" type="Polygon2D" parent="PolyPoser/Hip/Torso"]
 position = Vector2( 1.67371, -32.9076 )
 rotation = -1.39551
-z_index = -1
+z_as_relative = false
 color = Color( 0.368627, 0, 0, 1 )
 offset = Vector2( 1.34, 30 )
 polygon = PoolVector2Array( 1.88403, -34.3881, -1.53348, -35.3849, -4.239, -34.3881, -5.80535, -31.825, -6.09014, -28.4075, -3.8118, -25.4172, 0.175271, -25.8444, 1.88403, -27.9803, 3.02319, -31.2554 )

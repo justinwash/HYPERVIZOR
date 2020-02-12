@@ -3005,8 +3005,8 @@ polygon = PoolVector2Array( -2.67726, 7.71075, -1.78315, 6.80923, -0.612205, 6.6
 __meta__ = {
 "_edit_bone_": true
 }
-[connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Attack" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Defeat" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Reel" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Defeat" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Attack" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="CombatComponents/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="CombatComponents/Hurtbox" to="States/Combat/Attack" method="_on_Hurtbox_area_entered"]
