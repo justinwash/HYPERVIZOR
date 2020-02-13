@@ -31,7 +31,10 @@ func update_state(player):
 			player.current_target.sprite.set_scale(Vector2(1,1))
 			player.current_target.hitbox.set_scale(Vector2(1,1))
 		
-	if (Input.is_action_just_pressed("A")):
+	if (Input.is_action_just_pressed("A") || 
+		Input.is_action_just_pressed("B") ||
+		Input.is_action_just_pressed("C") ||
+		Input.is_action_just_pressed("D")):
 		player.current_state = player.states.combat["attack"]
 		
 	if (Input.is_action_pressed("player_down")):

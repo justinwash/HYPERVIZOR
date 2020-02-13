@@ -42,28 +42,28 @@ func update_dpad():
 	return dpad_input
 
 func update_btn():
-	if Input.is_action_just_pressed("player_btn1"):
-		if Input.is_action_pressed("player_btn2"):
+	if Input.is_action_just_pressed("A"):
+		if Input.is_action_pressed("B"):
 			btn_input = 12
-		elif Input.is_action_pressed("player_btn3"):
+		elif Input.is_action_pressed("C"):
 			btn_input = 13
-		elif Input.is_action_pressed("player_btn4"):
+		elif Input.is_action_pressed("D"):
 			btn_input = 14
 		else:
 			btn_input = 1
-	elif Input.is_action_just_pressed("player_btn2"):
-		if Input.is_action_pressed("player_btn3"):
+	elif Input.is_action_just_pressed("B"):
+		if Input.is_action_pressed("C"):
 			btn_input = 23
-		elif Input.is_action_pressed("player_btn4"):
+		elif Input.is_action_pressed("D"):
 			btn_input = 24
 		else:
 			btn_input = 2
-	elif Input.is_action_just_pressed("player_btn3"):
-		if Input.is_action_pressed("player_btn4"):
+	elif Input.is_action_just_pressed("C"):
+		if Input.is_action_pressed("D"):
 			btn_input = 34
 		else:
 			btn_input = 3
-	elif Input.is_action_just_pressed("player_btn4"):
+	elif Input.is_action_just_pressed("D"):
 		btn_input = 4
 	else:
 		btn_input = 0
