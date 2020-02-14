@@ -11,7 +11,7 @@ func _physics_process(delta):
 	frame += 1
 	update_dpad()
 	update_btn()
-	update_input_buffer(update_dpad(), update_btn(), frame)
+	update_input_buffer(dpad_input, btn_input, frame)
 
 func update_dpad():
 	if Input.is_action_pressed("player_left"):
@@ -42,28 +42,28 @@ func update_dpad():
 	return dpad_input
 
 func update_btn():
-	if Input.is_action_just_pressed("A"):
-		if Input.is_action_pressed("B"):
+	if Input.is_action_just_pressed("player_btn1"):
+		if Input.is_action_pressed("player_btn2"):
 			btn_input = 12
-		elif Input.is_action_pressed("C"):
+		elif Input.is_action_pressed("player_btn3"):
 			btn_input = 13
-		elif Input.is_action_pressed("D"):
+		elif Input.is_action_pressed("player_btn4"):
 			btn_input = 14
 		else:
 			btn_input = 1
-	elif Input.is_action_just_pressed("B"):
-		if Input.is_action_pressed("C"):
+	elif Input.is_action_just_pressed("player_btn2"):
+		if Input.is_action_pressed("player_btn3"):
 			btn_input = 23
-		elif Input.is_action_pressed("D"):
+		elif Input.is_action_pressed("player_btn4"):
 			btn_input = 24
 		else:
 			btn_input = 2
-	elif Input.is_action_just_pressed("C"):
-		if Input.is_action_pressed("D"):
+	elif Input.is_action_just_pressed("player_btn3"):
+		if Input.is_action_pressed("player_btn4"):
 			btn_input = 34
 		else:
 			btn_input = 3
-	elif Input.is_action_just_pressed("D"):
+	elif Input.is_action_just_pressed("player_btn4"):
 		btn_input = 4
 	else:
 		btn_input = 0
@@ -118,6 +118,9 @@ func find_buffered_btn(buffer, btn, window):
 			return s.btn_state
 
 	return null
+	
+func get_last_pressed():
+	return input_buffer[-2]
 
 class InputState:
 	var dpad_state := 5

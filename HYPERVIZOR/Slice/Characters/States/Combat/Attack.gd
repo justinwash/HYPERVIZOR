@@ -4,11 +4,16 @@ extends Node2D
 var animation
 
 func ready_state(player):
-	print(player.input.btn_input)
-	if player.input.btn_input == 1:
-		player.hitbox.current_attack = player.attacks.get_node("5+A")
-	elif player.input.btn_input == 2:
-		player.hitbox.current_attack = player.attacks.get_node("5+B")
+	var buffer_copy = player.input.input_buffer
+	var last_input = player.input.get_last_pressed()
+	print("last input: ", last_input.dpad_state, ",", last_input.btn_state, ",", last_input.frame_state)
+	var dpad = last_input.dpad_state
+	var btn = last_input.btn_state
+	
+	print(dpad, " ", btn)
+	
+	if btn != 0:
+		player.hitbox.current_attack = player.attacks.get_node(str(dpad) + "+" + str(btn))
 	else:
 		player.current_state = player.states.combat["idle"]
 		player.hitbox.current_attack = null
