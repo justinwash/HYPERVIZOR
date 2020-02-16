@@ -13,11 +13,13 @@ func activate():
 		return
 		
 	if is_open == false:
-		$TextLog.visible = true
+		$Window/TextLog.visible = true
+		$Window/Border.visible = true
 		is_open = true
 		
 func on_exit(player):
 	if halted:
 		return
-	$TextLog.visible = false
+	$Window/TextLog.visible = false
+	$Window/Border.visible = false
 	is_open = false

@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Slice/Interactables/Terminals/ComputerTerminal.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Interactables/Terminals/computer.png" type="Texture" id=2]
+[ext_resource path="res://Art WIP/stolen_text_box.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 42.0476
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -14.1538, 31.6434, -8.3846, 31.8182, -8.3846, 6.81819, 7.17485, 6.81819, 7.17485, 31.1189, 13.8182, 31.1189, 13.8182, 7.34266, 15.7413, 7.34266, 15.9161, -1.57342, 11.3707, -5.76923, 12.4196, -6.64335, 12.7693, -23.7762, 8.74828, -27.0979, -8.55942, -27.2727, -12.9301, -23.0769, -12.9301, -6.64335, -11.8811, -5.24475, -15.9021, -1.74825, -15.9021, 6.46854, -14.3287, 6.64336 )
 
 [node name="ComputerTerminal" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,14 +19,27 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="InteractionRadius" type="Area2D" parent="."]
+visible = false
 
 [node name="InteractionShape" type="CollisionShape2D" parent="InteractionRadius"]
 shape = SubResource( 1 )
 
-[node name="TextLog" type="RichTextLabel" parent="."]
+[node name="Oclussion" type="Node2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Oclussion"]
+occluder = SubResource( 2 )
+
+[node name="Window" type="CanvasLayer" parent="."]
+
+[node name="Border" type="Sprite" parent="Window"]
 visible = false
-margin_left = -54.0
-margin_top = -118.0
-margin_right = 54.0
-margin_bottom = -43.0
+position = Vector2( 329.265, 65.8766 )
+texture = ExtResource( 3 )
+
+[node name="TextLog" type="RichTextLabel" parent="Window"]
+visible = false
+margin_left = 184.0
+margin_top = 40.0
+margin_right = 474.0
+margin_bottom = 93.0
 text = "So this is where you should see some story-related text..."

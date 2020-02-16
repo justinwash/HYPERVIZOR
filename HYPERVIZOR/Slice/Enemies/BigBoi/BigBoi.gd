@@ -13,6 +13,7 @@ var vitals
 var anim
 var attacks
 var hitbox
+var combat_components
 
 var states
 var last_state
@@ -25,6 +26,7 @@ func _ready():
 	anim = $AnimationPlayer
 	attacks = $CombatComponents/Attacks
 	hitbox = $CombatComponents/Hitbox
+	combat_components = $CombatComponents
 
 	states = {
 		combat = {

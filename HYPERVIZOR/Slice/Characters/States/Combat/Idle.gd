@@ -25,14 +25,14 @@ func update_state(player):
 			player.combat_components.set_scale(Vector2(1,1))
 			
 			player.current_target.sprite.set_scale(Vector2(-1,1))
-			player.current_target.hitbox.set_scale(Vector2(-1,1))
+			player.current_target.combat_components.set_scale(Vector2(-1,1))
 			
 		elif player.current_target.global_position.x - player.global_position.x <= 0:
 			player.sprite.set_scale(Vector2(-1,1))
 			player.combat_components.set_scale(Vector2(-1,1))
 			
 			player.current_target.sprite.set_scale(Vector2(1,1))
-			player.current_target.hitbox.set_scale(Vector2(1,1))
+			player.current_target.combat_components.set_scale(Vector2(1,1))
 		
 	if (input.btn_input != 0):
 		player.current_state = player.states.combat["attack"]
