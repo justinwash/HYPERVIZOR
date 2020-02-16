@@ -12,8 +12,8 @@ func update_state(player):
 	if (Input.is_action_pressed("kill")):
 		if player.current_target != null and player.current_mode == "combat":
 			player.inventory.XP += player.current_target.xp_reward
-			print("killing current target: " + str(player.current_target.xp_reward) + "XP gained")
-			print("XP current: " + str(player.inventory.XP))
+#			print("killing current target: " + str(player.current_target.xp_reward) + "XP gained")
+#			print("XP current: " + str(player.inventory.XP))
 			player.current_target.free()
 			player.current_target = null
 			player.exit_combat_mode()

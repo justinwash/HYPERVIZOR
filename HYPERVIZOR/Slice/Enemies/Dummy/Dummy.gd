@@ -32,14 +32,14 @@ func _ready():
 	current_state = states.exploration["idle"]
 	last_state = states.exploration["idle"]
 
-	print("current state: " + current_state.name)
+#	print("current state: " + current_state.name)
 
 func _physics_process(delta):
 	if halted:
 		return
 		
 	if current_state != last_state:
-		print("current state: " + current_state.name)
+#		print("current state: " + current_state.name)
 		last_state = current_state
 		if current_state.has_method("ready_state"):
 			current_state.ready_state(self)

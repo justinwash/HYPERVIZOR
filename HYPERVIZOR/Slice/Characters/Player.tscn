@@ -7338,7 +7338,7 @@ tracks/26/keys = {
 "times": PoolRealArray( 0, 0.05, 0.2, 0.4, 0.4, 0.45, 0.6, 0.6, 0.6, 0.61 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.355844, 0 ), Vector2( -0.355883, 1.6475 ), Vector2( -0.35596, 4.90923 ), Vector2( -0.355844, -1.04606e-06 ), Vector2( -0.355844, 0 ), Vector2( -0.355883, 1.755 ), Vector2( -0.356, 7.02 ), Vector2( -0.356, 7.02 ), Vector2( -0.356, 7.02 ), Vector2( -0.355992, 6.669 ) ]
+"values": [ Vector2( -0.355844, 0 ), Vector2( -0.355883, 1.6475 ), Vector2( -0.35596, 4.90923 ), Vector2( -0.355844, -1.04606e-006 ), Vector2( -0.355844, 0 ), Vector2( -0.355883, 1.755 ), Vector2( -0.356, 7.02 ), Vector2( -0.356, 7.02 ), Vector2( -0.356, 7.02 ), Vector2( -0.355992, 6.669 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("PolyPoser/Hip:rotation_degrees")
@@ -8184,7 +8184,6 @@ shape = SubResource( 19 )
 disabled = true
 
 [node name="Hurtbox" type="Area2D" parent="CombatComponents"]
-visible = false
 collision_layer = 4
 collision_mask = 4
 

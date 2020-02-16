@@ -1,3 +1,5 @@
+#warnings-disable
+
 extends Node2D
 
 export var EXPLORATION_GRAVITY = 200

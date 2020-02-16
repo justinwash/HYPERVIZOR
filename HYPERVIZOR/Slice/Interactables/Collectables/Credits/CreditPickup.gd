@@ -9,6 +9,6 @@ func activate():
 		
 func on_enter(player):
 	player.inventory.CREDITs += value
-	print("picked up " + str(value) + " CREDITs")
-	print("CREDITs: " + str(player.inventory.CREDITs))
+#	print("picked up " + str(value) + " CREDITs")
+#	print("CREDITs: " + str(player.inventory.CREDITs))
 	self.queue_free()

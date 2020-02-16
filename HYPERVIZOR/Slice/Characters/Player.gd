@@ -1,3 +1,4 @@
+#warnings-disable
 extends KinematicBody2D
 
 # State Variables
@@ -61,7 +62,7 @@ func _ready():
 	current_state = states.exploration["idle"]
 	last_state = states.exploration["idle"]
 
-	print("current state: " + current_state.name)
+#	print("current state: " + current_state.name)
 	if current_state.has_method("ready_state"):
 			current_state.ready_state(self)
 
@@ -79,7 +80,7 @@ func _physics_process(delta):
 	# UI stuff that need to go elsewhere above
 	
 	if current_state != last_state:
-		print("current state: " + current_state.name)
+#		print("current state: " + current_state.name)
 		last_state = current_state
 		if current_state.has_method("ready_state"):
 			current_state.ready_state(self)
@@ -147,18 +148,18 @@ func _on_InteractionRadius_area_entered(area):
 	if area.owner.has_method("on_enter"):
 		area.owner.on_enter(self)
 	nearby_interactables.push_front(area.owner)
-	print(area.owner.name + " nearby")
+#	print(area.owner.name + " nearby")
 
 func _on_InteractionRadius_area_exited(area):
 	if area.owner != null and area.owner.has_method("on_exit"):
 		area.owner.on_exit(self)
 		nearby_interactables.remove(nearby_interactables.find(null))
-		print(area.owner.name + " not near anymore")
+#		print(area.owner.name + " not near anymore")
 
 func _on_Hurtbox_area_entered(area):
 	vitals.HEALTH -= area.current_attack.DAMAGE
 	if vitals.HEALTH <= 0:
-		print("player RIP")
-#		current_state = states.combat["defeat"]
+#		print("player RIP")
+		current_state = states.combat["defeat"]
 	else:
 		current_state = states.combat["reel"]

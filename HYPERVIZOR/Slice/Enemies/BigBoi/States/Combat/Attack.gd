@@ -1,14 +1,14 @@
+#warnings-disable
+
 # Combat/Attack
 extends Node2D
-
-var animation
 
 func ready_state(this):
 	this.hitbox.current_attack = this.attacks.get_node("5+A")
 	# Find the correct attack animation and play it
 	var animation = this.hitbox.current_attack.ANIMATION
 	
-	print("playing animation: " + animation)
+#	print("playing animation: " + animation)
 	this.anim.play(animation)
 
 func update_state(this):

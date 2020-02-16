@@ -1,3 +1,4 @@
+#warnings-disable
 extends Node2D
 
 var halted = false

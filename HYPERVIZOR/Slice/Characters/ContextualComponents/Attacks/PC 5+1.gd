@@ -1,3 +1,4 @@
+#warnings-disable
 extends Node2D
 
 export var NAME := "Standing Left Punch"

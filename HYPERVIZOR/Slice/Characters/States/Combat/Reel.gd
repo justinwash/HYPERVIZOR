@@ -1,3 +1,4 @@
+#warnings-disable
 extends Node2D
 
 func ready_state(player):
