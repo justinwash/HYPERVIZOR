@@ -72,4 +72,5 @@ func _on_Hurtbox_area_entered(area):
 		area.owner.inventory.XP += xp_reward
 		current_state = states.combat["defeat"]
 	else:
+		states.combat["reel"].ready_state(self)
 		current_state = states.combat["reel"]

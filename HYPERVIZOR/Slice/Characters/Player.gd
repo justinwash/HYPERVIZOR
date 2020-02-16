@@ -159,7 +159,9 @@ func _on_InteractionRadius_area_exited(area):
 func _on_Hurtbox_area_entered(area):
 	vitals.HEALTH -= area.current_attack.DAMAGE
 	if vitals.HEALTH <= 0:
+		pass
 #		print("player RIP")
-		current_state = states.combat["defeat"]
+#		current_state = states.combat["defeat"]
 	else:
+		states.combat["reel"].ready_state(self)
 		current_state = states.combat["reel"]
