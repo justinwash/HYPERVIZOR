@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Slice/Interactables/Terminals/ComputerTerminal.gd" type="Script" id=1]
 [ext_resource path="res://Slice/Interactables/Terminals/computer.png" type="Texture" id=2]
 [ext_resource path="res://Art WIP/stolen_text_box.png" type="Texture" id=3]
+[ext_resource path="res://Slice/Interactables/Icon.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 42.0476
@@ -43,3 +44,7 @@ margin_top = 40.0
 margin_right = 474.0
 margin_bottom = 93.0
 text = "So this is where you should see some story-related text..."
+
+[node name="Icon" parent="." instance=ExtResource( 4 )]
+light_mask = 0
+position = Vector2( 23.3943, -29.8129 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Slice/Interactables/Icon.gd" type="Script" id=1]
+[ext_resource path="res://Art WIP/interact-icon.png" type="Texture" id=2]
+
+[node name="Icon" type="Sprite"]
+light_mask = 0
+position = Vector2( 21.7733, -72.1914 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
