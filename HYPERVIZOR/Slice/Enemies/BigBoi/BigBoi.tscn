@@ -2689,10 +2689,10 @@ extents = Vector2( 20.5083, 34.7889 )
 [sub_resource type="CircleShape2D" id=7]
 radius = 79.3816
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 21.0574, 24.4825 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 28.7541, 48.0936 )
 
 [sub_resource type="Shader" id=10]
@@ -2742,7 +2742,7 @@ script = ExtResource( 5 )
 
 [node name="HitboxShape" type="CollisionShape2D" parent="CombatComponents/Hitbox"]
 position = Vector2( 41.3168, 4.76656 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 disabled = true
 
 [node name="Hurtbox" type="Area2D" parent="CombatComponents"]
@@ -2751,7 +2751,7 @@ collision_mask = 2
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="CombatComponents/Hurtbox"]
 position = Vector2( 6.47067, -17.0826 )
-shape = SubResource( 12 )
+shape = SubResource( 9 )
 
 [node name="States" type="Node2D" parent="."]
 
@@ -3005,7 +3005,7 @@ polygon = PoolVector2Array( -2.67726, 7.71075, -1.78315, 6.80923, -0.612205, 6.6
 __meta__ = {
 "_edit_bone_": true
 }
-[connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Attack" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Reel" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Defeat" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="States/Combat/Attack" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="CombatComponents/Hurtbox" to="." method="_on_Hurtbox_area_entered"]

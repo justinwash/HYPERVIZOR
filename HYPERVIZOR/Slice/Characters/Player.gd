@@ -6,6 +6,7 @@ var sprite
 var physics
 var vitals
 var inventory
+var cameraAnchor
 var camera
 var input
 var anim
@@ -28,7 +29,8 @@ func _ready():
 	physics = $Physics
 	vitals = $Vitals
 	inventory = $Inventory
-	camera = $CameraAnchor
+	cameraAnchor = $CameraAnchor
+	camera = $CameraAnchor/Camera
 	input = $Input
 	anim = $AnimationPlayer
 	attacks = $CombatComponents/Attacks
@@ -125,12 +127,12 @@ func exit_combat_mode():
 
 func set_camera_position():
 	if current_mode == "combat" and (current_target != null && is_instance_valid(current_target)):
-		camera.global_position = (current_target.global_position + self.global_position) / 2
-		camera.get_node("Camera").set_zoom(Vector2(0.8, 0.8))
+		cameraAnchor.global_position = (current_target.global_position + self.global_position) / 2
+		cameraAnchor.get_node("Camera").set_zoom(Vector2(0.8, 0.8))
 	
 	else:
-		camera.global_position = self.global_position
-		camera.get_node("Camera").set_zoom(Vector2(1, 1))
+		cameraAnchor.global_position = self.global_position
+		cameraAnchor.get_node("Camera").set_zoom(Vector2(1, 1))
 
 # Utility Variables
 var nearby_interactables = []

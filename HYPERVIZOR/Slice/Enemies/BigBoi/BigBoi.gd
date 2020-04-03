@@ -69,6 +69,7 @@ func on_exit(player):
 	
 func _on_Hurtbox_area_entered(area):
 	print("HIT")
+	area.owner.camera.shake(0.2, 15, 8)
 	HEALTH -= area.current_attack.DAMAGE
 	if HEALTH <= 0:
 		area.owner.inventory.XP += xp_reward
